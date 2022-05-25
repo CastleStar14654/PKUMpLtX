@@ -1,6 +1,12 @@
 # Changelog
 
-## 2022-05-25, v2.0
+## Current
+
+### doc
+
+1. 修正了对 `\textdegree{}C` 的 typo.
+
+## 2022-05-25, [v2.0](https://github.com/CastleStar14654/PKUMpLtX/releases/tag/v.2.0)
 
 ### cls
 1. 去除了非必要的外部宏包.
