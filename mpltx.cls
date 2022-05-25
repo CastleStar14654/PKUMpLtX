@@ -46,6 +46,7 @@
 
 
 % 提供字体配置
+\newif\ifmpltx@fontset\mpltx@fontsetfalse
 \def\@testfandol{% 检测 fandol 宏包有没有安装
   \IfFontExistsTF{FandolSong}{}{
     \ClassError{mpltx}{'fandol' is not installed}{Please install package 'fandol'}
@@ -60,13 +61,10 @@
 }
 \def\@mapping{}
 \DeclareOption{quanjiao}{\def\@mapping{,Mapping={fullwidth-stop}}}%
-\DeclareOption{default}
-   {\@testfandol%
-    \setCJKmainfont[BoldFont={FandolSong Bold},ItalicFont={FandolFang}\@mapping]{FandolSong}%
-    \setCJKsansfont[BoldFont={FandolHei Bold},ItalicFont={FandolKai}\@mapping]{FandolHei}%
-    \setCJKmonofont[AutoFakeBold=true,ItalicFont={FandolKai}\@mapping]{FandolFang}}%
+\DeclareOption{default}{}
 \DeclareOption{noto}
   {\@testnoto%
+   \mpltx@fontsettrue%
    \ifwindows{
     \setCJKmainfont[BoldFont={Noto Serif CJK SC Bold},ItalicFont={FangSong}\@mapping]{Noto Serif CJK SC}%
     \setCJKsansfont[BoldFont={Noto Sans CJK SC Bold},ItalicFont={KaiTi}\@mapping]{Noto Sans CJK SC}%
@@ -78,23 +76,33 @@
    \fi}
 \DeclareOption{notofandol}
    {\@testnoto\@testfandol%
+    \mpltx@fontsettrue%
     \setCJKmainfont[BoldFont={Noto Serif CJK SC Bold},ItalicFont={FandolFang}\@mapping]{Noto Serif CJK SC}%
     \setCJKsansfont[BoldFont={Noto Sans CJK SC Bold},ItalicFont={FandolKai}\@mapping]{Noto Sans CJK SC}%
     \setCJKmonofont[AutoFakeBold=true,ItalicFont={FandolKai}\@mapping]{FandolFang}}%
 \DeclareOption{windows}
-  {\setCJKmainfont[BoldFont={STZhongsong},ItalicFont={FangSong}\@mapping]{SimSun}%
+  {\mpltx@fontsettrue%
+   \setCJKmainfont[BoldFont={STZhongsong},ItalicFont={FangSong}\@mapping]{SimSun}%
    \setCJKsansfont[BoldFont={DengXian Bold},ItalicFont={KaiTi}\@mapping]{DengXian}%
    \setCJKmonofont[AutoFakeBold=true,ItalicFont={KaiTi}\@mapping]{FangSong}}
 \DeclareOption{macos}
-  {\setCJKmainfont[BoldFont={Songti SC Bold},ItalicFont={STFangsong}\@mapping]{Songti SC}%
+  {\mpltx@fontsettrue%
+   \setCJKmainfont[BoldFont={Songti SC Bold},ItalicFont={STFangsong}\@mapping]{Songti SC}%
    \setCJKsansfont[BoldFont={PingFang SC Semibold},ItalicFont={Kaiti SC}\@mapping]{PingFang SC}%
    \setCJKmonofont[AutoFakeBold=true,ItalicFont={KaiTi SC}\@mapping]{STFangsong}}
-\DeclareOption{diy}{}
+\DeclareOption{diy}{\mpltx@fontsettrue}
 
 
 \ExecuteOptions{default}
 \ProcessOptions\relax
 
+\ifmpltx@fontset\else
+  \@testfandol%
+  \mpltx@fontsettrue%
+  \setCJKmainfont[BoldFont={FandolSong Bold},ItalicFont={FandolFang}\@mapping]{FandolSong}%
+  \setCJKsansfont[BoldFont={FandolHei Bold},ItalicFont={FandolKai}\@mapping]{FandolHei}%
+  \setCJKmonofont[AutoFakeBold=true,ItalicFont={FandolKai}\@mapping]{FandolFang}%
+\fi
 
 % 参考文献格式
 \bibliographystyle{apsrev4-2}
