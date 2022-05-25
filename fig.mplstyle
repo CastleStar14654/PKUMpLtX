@@ -1,0 +1,8 @@
+figure.figsize: 5., 3.75
+figure.dpi: 150
+mathtext.fontset: cm
+font.family: serif
+font.size: 10.0
+xtick.labelsize: small
+ytick.labelsize: small
+legend.fontsize: small
