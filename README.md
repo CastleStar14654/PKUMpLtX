@@ -29,7 +29,7 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 使用前推荐先仔细查看 [`template.tex`](template.tex) 和 [`template.pdf`](template.pdf) 文件.
 如果有魔改需求可以查看 [`mpltx.cls`](mpltx.cls)
 
-如果初次使用$\LaTeX$, 推荐以下入门文档:
+如果初次使用 $\LaTeX{}$, 推荐以下入门文档:
 1. [lshort-zh-cn](http://mirrors.ctan.org/info/lshort/chinese/lshort-zh-cn.pdf) 
 2. [lnotes2](https://github.com/huangxg/lnotes/blob/master/lnotes2.pdf)
 
@@ -64,8 +64,9 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 1. 常规编译: `xelatex %DOC%` 一次;
 2. 更新超链接: `xelatex %DOC%` 两次;
 3. 更新参考文献引用: `xelatex %DOC%` 一次, `bibtex %DOC%` 一次, `xelatex %DOC%` 两次.
+
 以上的 `%DOC%` 均为 `*.tex` 主文件去掉拓展名后的剩余部分.
-绝大多数$\LaTeX$编辑器在适当配置后可以为你完成这些工作.
+绝大多数 $\LaTeX{}$ 编辑器在适当配置后可以为你完成这些工作.
 
 比如, 示例文档的编译为
 ```bash
@@ -88,7 +89,7 @@ xelatex template
 注意, 此宏包定义的 ''物理量'' 命令 `\qty` 与 `physics` 的 ''自动调整括号大小'' 命令重名.
 所以, 本模板将本宏包的命令**重命名**为 `\qnty`.
 
-+ [`dcolumn`](https://www.ctan.org/pkg/dcolumn) $\LaTeX 2\epsilon$基础包的一个, 提供按小数点对齐的表格列格式.
++ [`dcolumn`](https://www.ctan.org/pkg/dcolumn) $\LaTeX{}2\epsilon$ 基础包的一个, 提供按小数点对齐的表格列格式.
 `siunitx` 其实也提供了类似功能, 感兴趣的可以参考两者文档.
 
 ### 其他需要注意的外部宏包

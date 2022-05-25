@@ -6,7 +6,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{mpltx}[2022/05/25 XeLaTeX class for MP Lab in PKU]
 
-\def\currversion{2.0}
+\def\currversion{2.0.1}
 
 % 基于 APS 的文档类 revtex4-2; 参数含义:
 % APS 系列期刊 Phys. Rev. E 格式预印本, 显示关键词, A4

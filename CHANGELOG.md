@@ -1,10 +1,14 @@
 # Changelog
 
-## Current
+## 2022-05-25, [v2.0.1](https://github.com/CastleStar14654/PKUMpLtX/releases/tag/v2.0.1)
+
+### cls
+
+1. 修复了 `diy` 选项的逻辑错误.
 
 ### doc
 
-1. 修正了对 `\textdegree{}C` 的 typo.
+1. 修正了若干 typo.
 
 ## 2022-05-25, [v2.0](https://github.com/CastleStar14654/PKUMpLtX/releases/tag/v.2.0)
 
