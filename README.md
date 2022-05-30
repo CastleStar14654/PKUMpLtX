@@ -12,13 +12,13 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
 ## 文件内容
 
-+ [`mpltx.cls`]: 模板文件.
++ [`mpltx.cls`]\: 模板文件.
 + `README.md`: 本文件, 说明文档.
 + [`template.tex`], [`template.pdf`]: 示例报告模板兼说明文档.
-  + [`bibli.bib`]: 用于参考文献生成的文件.
-  + [`fig/`]: 示例报告用到的图片.
-+ [`figgen.py`]: 生成其中一张图片用的脚本.
-  + [`fig.mplstyle`]: 相应的格式设置.
+  + [`bibli.bib`]\: 用于参考文献生成的文件.
+  + [`fig/`]\: 示例报告用到的图片.
++ [`figgen.py`]\: 生成其中一张图片用的脚本.
+  + [`fig.mplstyle`]\: 相应的格式设置.
 
 ## 使用方法
 
@@ -113,7 +113,7 @@ xelatex template
 [`fig.mplstyle`]: fig.mplstyle
 
 [`revtex4-2`]: https://www.ctan.org/pkg/revtex
-[lshort-zh-cn]: http://mirrors.ctan.org/info/lshort/chinese/lshort-zh-cn.pdf)
+[lshort-zh-cn]: http://mirrors.ctan.org/info/lshort/chinese/lshort-zh-cn.pdf
 [lnotes2]: https://github.com/huangxg/lnotes/blob/master/lnotes2.pdf
 [`xeCJK`]: https://www.ctan.org/pkg/xecjk
 [`fandol`]: https://www.ctan.org/pkg/fandol
