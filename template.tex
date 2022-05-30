@@ -100,18 +100,17 @@
 例表为\autoref{tab:table_eg}.
 
 \begin{table}
-    \caption{表格示例.
-        \note{注意使用 \texttt{ruledtabular} 环境.
+    \caption{表格示例
+        \footnote{表格标题要简明扼要; 注意使用 \texttt{ruledtabular} 环境.
             表格中的脚注会自动加在表尾.
-            本表中的 ``数值'' 列使用了 \texttt{d} 列格式来按小数点位置对齐.
-            为方便, 还提供了 \texttt{\textbackslash{}mc} 作为 \texttt{\textbackslash{}multicolumn} 的简写.
-            \href{https://www.tablesgenerator.com}{Tables Generator 网站}可以方便地生成 \LaTeX 表格}}
+            为方便, 提供了 \texttt{\textbackslash{}mc} 作为 \texttt{\textbackslash{}multicolumn} 的简写.
+            \href{https://www.tablesgenerator.com}{Tables Generator 网站}可以方便地生成 \LaTeX 表格.}}
     \label{tab:table_eg}
     \begin{ruledtabular}% ruledtabular 环境自动生成首尾双横线, 并调整宽度至占满全行
         \begin{tabular}{cd{4.2}lr}
             % d{a.b} 能使该列中的数据按小数点对齐, 前方留 a 个字符, 后方留 b 个字符
             % 已将 multicolumn 简写为 mc
-            居中    & \mc{1}{c}{数值\footnote{记得将 d 列的列标题单独设为居中}} & 靠左    & 靠右 \\
+            居中    & \mc{1}{c}{数值\footnote{``数值'' 列使用了 \texttt{d} 列格式来按小数点位置对齐. 记得将 d 列的列标题单独设为居中.}} & 靠左    & 靠右 \\
             \colrule% 中间横线
             a     & 0.12                                      & a     & a \\
             bbb   & -100                                      & bbb   & bbb \\

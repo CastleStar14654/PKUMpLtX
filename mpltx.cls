@@ -169,6 +169,20 @@
   }{}{}%
 }{}{}
 
+% 行距调整
+\linespread{1.3}
+\setlength{\footnotesep}{1em}
+\patchcmd{\footnotesize}
+  {\@setfontsize\footnotesize\@xpt{14.5pt}}
+  {\@setfontsize\footnotesize\@xpt{12pt}}
+  {}
+  {}
+\patchcmd{\small}
+  {\@setfontsize\small\@xipt{14.5pt}}
+  {\@setfontsize\small\@xipt{13pt}}
+  {}
+  {}
+
 % 定义表格中的数字格式, d{a.b} 即为按小数点区分, 前留 a 位, 后留 b 位
 \newcolumntype{d}[1]{D{.}{.}{#1}}
 % 开头空两格

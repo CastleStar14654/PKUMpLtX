@@ -1,6 +1,21 @@
 # Changelog
 
-## 2022-05-25, [v2.0.1](https://github.com/CastleStar14654/PKUMpLtX/releases/tag/v2.0.1)
+## [Unreleased]
+
+### cls
+
+1. 微调了一些行距参数.
+2. 表格脚注格式调整.
+
+### doc
+
+1. 修改了表格示例.
+
+### readme
+
+1. 修改了 typo 与格式.
+
+## 2022-05-25, [v2.0.1]
 
 ### cls
 
@@ -10,7 +25,7 @@
 
 1. 修正了若干 typo.
 
-## 2022-05-25, [v2.0](https://github.com/CastleStar14654/PKUMpLtX/releases/tag/v.2.0)
+## 2022-05-25, [v2.0]
 
 ### cls
 1. 去除了非必要的外部宏包.
@@ -44,3 +59,7 @@
 ## 2022-03-19
 
 `*.cls` 初版本.
+
+[Unreleased]: https://github.com/CastleStar14654/PKUMpLtX/compare/v2.0.1...HEAD
+[v2.0.1]:     https://github.com/CastleStar14654/PKUMpLtX/compare/v.2.0...v2.0.1
+[v2.0]:       https://github.com/CastleStar14654/PKUMpLtX/releases/tag/v.2.0
