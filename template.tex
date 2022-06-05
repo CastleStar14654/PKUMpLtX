@@ -78,7 +78,7 @@
 \end{figure}
 
 \note{这里使用了 \texttt{\textbackslash{}autoref\{\}} 命令来自动给出带类型的交叉引用, 注意在命令前后适当使用空格以给出最好的显示效果.
-    小节, 表格, 公式等都可如此引用, 如: \autoref{sec:theory}, \autoref{ssec:table}, \autoref{sssec:table}, \autoref{eq:1}, \autoref{tab:table_eg}.
+    小节, 表格, 公式等都可如此引用, 如: \autoref{sec:theory}, \autoref{ssec:table}, \autoref{sssec:table}, \autoref{eq:1}, \autoref{tab:table_eg}, \autoref{app:exercise}, \autopageref{tab:table_eg}.
     交叉引用的标签尽量取得有意义.}
 
 实验仪器和方法不是像普物实验报告那样将所有实验器材列出, 而是要用介绍功用的方式成段给出.
@@ -113,9 +113,9 @@
             % 已将 multicolumn 简写为 mc
             居中    & \mc{1}{c}{数值\footnote{``数值'' 列使用了 \texttt{d} 列格式来按小数点位置对齐. 记得将 d 列的列标题单独设为居中.}} & 靠左    & 靠右 \\
             \colrule% 中间横线
-            a     & 0.12                                      & a     & a \\
-            bbb   & -100                                      & bbb   & bbb \\
-            ccccc & 50.8                                      & ccccc & ccccc
+            a     & 0.12                                                                            & a     & a \\
+            bbb   & -100                                                                            & bbb   & bbb \\
+            ccccc & 50.8                                                                            & ccccc & ccccc
         \end{tabular}
     \end{ruledtabular}
 \end{table}
@@ -186,7 +186,7 @@
 
 \clearpage % 附录前另起一页
 \appendix % 附录开始
-\section{思考题}
+\section{思考题}\label{app:exercise}
 \subsection{可以把每道思考题的题目分别作为小标题}
 然后书写解答.
 
@@ -236,15 +236,26 @@
 \end{enumerate}
 
 \section{对 \LaTeX 中标点输入的额外说明}
+\LaTeX 中对 dash 有所区分,
+\begin{center}
+    \begin{tabular}{c@{\quad}c@{\ $\rightarrow$\ }c}
+        连字符 hyphen    & \verb|co-operate|     & co-operate \\
+        连接号 en-dash   & \verb|14--19|         & 14--19 \\
+        英文破折号 em-dash & \verb|Yes --- or no?| & Yes --- or no? \\
+        减号            & \verb|$-1$|           & $-1$ \\
+    \end{tabular}
+\end{center}
+中文破折号 (——) 就按一般习惯的用输入法输入即可.
+\note{其实中文破折号就是两个连着的 en-dash, 但两种输入方式使他们输出字体不同.}
 
 \LaTeX 中半角引号使用如下映射进行输入.
-左引号的符号为键盘 \textsf{Esc} 键下方的锐音符.
+左引号的符号为 \textsf{Esc} 键下方的锐音符.
 \begin{center}
     \begin{tabular}{c@{\quad}c@{\ $\rightarrow$\ }c@{\quad}c@{\ $\rightarrow$\ }c}
-        单引号 & \verb|`| & ` & \verb|'| & ' \\
-        双引号 & \verb|``| & `` & \verb|''| & '' \\
-        美式连续嵌套引号 & \verb|```| & ``` & \verb|'{}''| & '{}'' \\
-        英式连续嵌套引号 & \verb|`{}``| & `{}`` & \verb|'''| & ''' \\
+        单引号      & \verb|`|     & `     & \verb|'|     & ' \\
+        双引号      & \verb|``|    & ``    & \verb|''|    & '' \\
+        美式连续嵌套引号 & \verb|```|   & ```   & \verb|'{}''| & '{}'' \\
+        英式连续嵌套引号 & \verb|`{}``| & `{}`` & \verb|'''|   & ''' \\
     \end{tabular}
 \end{center}
 注意其中 \texttt{\{\}} 起到的分组作用.

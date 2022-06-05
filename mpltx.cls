@@ -147,28 +147,32 @@
 \expandafter\def\csname Parent0\endcsname{section*.2}%
 \expandafter\@argswap@val\expandafter{\bookmarkabstractname}{\addcontentsline{toc}{abstract}}%
 }%
-\makeatother
 
 % 中文本地化
 \setlocalecaption{chinese}{abstract}{}
-\renewcommand{\acknowledgmentsname}{致谢}
+\setlocalecaption{chinese}{acknowledgments}{致谢}
 % 使 hyperref 的 \autoref 可以生成正确结构名
-\renewcommand{\figureautorefname}{\figurename}
-\renewcommand{\tableautorefname}{\tablename}
-\setlocalecaption{chinese}{section}{小节}
-\renewcommand{\sectionautorefname}{\sectionname}
-\renewcommand{\appendixautorefname}{\appendixname}
-\setlocalecaption{chinese}{equation}{式}
-\def\equationautorefname~#1\null{\equationname~(#1)\null}
+\addto\extraschinese{% here the use of % is necessary
+  \def\equationautorefname~#1\null{式~(#1)\null}%
+  \renewcommand{\footnoteautorefname}{脚注}%
+  \renewcommand{\itemautorefname}{项}%
+  \renewcommand{\figureautorefname}{\figurename}%
+  \renewcommand{\tableautorefname}{\tablename}%
+  \def\partautorefname~#1\null{\prepartname~#1\ \postpartname\null}%
+  \renewcommand{\appendixautorefname}{\appendixname}%
+  \renewcommand{\sectionautorefname}{小节}%
+  \renewcommand{\theoremautorefname}{定理}%
+  \def\pageautorefname\nobreakspace\pageref*#1{第~\pageref*{#1}\ 页\null}% 用于 \autopageref
+}
 % revtex 内部对 \section 的更改使得 hyperref 对 \appendix 的修改没有产生效果
 % 这里做了修复
-\apptocmd{\appendix}{
+\appto\appendix{
   \patchcmd{\phantomsection}{%
     \Hy@MakeCurrentHrefAuto{section*}%
   }{%
     \Hy@MakeCurrentHrefAuto{\Hy@chapapp*}%
   }{}{}%
-}{}{}
+}
 
 % 行距调整
 \linespread{1.3}
