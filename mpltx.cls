@@ -153,12 +153,13 @@
 \setlocalecaption{chinese}{abstract}{}
 \renewcommand{\acknowledgmentsname}{致谢}
 % 使 hyperref 的 \autoref 可以生成正确结构名
-\renewcommand{\figureautorefname}{图}
-\newcommand{\subfigureautorefname}{子图}
-\renewcommand{\tableautorefname}{表}
-\renewcommand{\sectionautorefname}{小节}
-\renewcommand{\appendixautorefname}{附录}
-\def\equationautorefname~#1\null{式~(#1)\null}
+\renewcommand{\figureautorefname}{\figurename}
+\renewcommand{\tableautorefname}{\tablename}
+\setlocalecaption{chinese}{section}{小节}
+\renewcommand{\sectionautorefname}{\sectionname}
+\renewcommand{\appendixautorefname}{\appendixname}
+\setlocalecaption{chinese}{equation}{式}
+\def\equationautorefname~#1\null{\equationname~(#1)\null}
 % revtex 内部对 \section 的更改使得 hyperref 对 \appendix 的修改没有产生效果
 % 这里做了修复
 \apptocmd{\appendix}{
