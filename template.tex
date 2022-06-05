@@ -4,7 +4,8 @@
 % Please read `README.md' and the template file before using
 \documentclass[notofandol]{mpltx}
 
-\hypersetup{colorlinks=true}
+% 以下三行仅为本文件额外定义的命令
+\hypersetup{colorlinks=true}% 超链接带颜色
 \usepackage{xcolor}
 \newcommand{\note}[1]{{\color{gray}#1}}
 
@@ -35,7 +36,7 @@
 所研究领域背景和现状,
 有待研究的问题,
 本研究的物理目的和主要方法.
-% 通过空行分段
+% 通过空行或者 \par 命令分段
 引言一定要切合报告正文, 不能漫无目的地介绍背景, 要快速地将读者引导到报告主题上.
 引言篇幅可以在较大范围内变化, 但最长不应超过报告文字篇幅的1/3.
 
@@ -101,7 +102,7 @@
 
 \begin{table}
     \caption{表格示例
-        \footnote{表格标题要简明扼要; 注意使用 \texttt{ruledtabular} 环境.
+        \footnote{表格标题要简明扼要; 注意使用 \textsf{revtex} 提供的 \texttt{ruledtabular} 环境生成首尾双横线的表格.
             表格中的脚注会自动加在表尾.
             为方便, 提供了 \texttt{\textbackslash{}mc} 作为 \texttt{\textbackslash{}multicolumn} 的简写.
             \href{https://www.tablesgenerator.com}{Tables Generator 网站}可以方便地生成 \LaTeX 表格.}}
@@ -233,5 +234,26 @@
     \item 思考题不是报告的组成部分.
           应另起一页附在报告的最后. \note{(比如作为附录)}
 \end{enumerate}
+
+\section{对 \LaTeX 中标点输入的额外说明}
+
+\LaTeX 中半角引号使用如下映射进行输入.
+左引号的符号为键盘 \textsf{Esc} 键下方的锐音符.
+\begin{center}
+    \begin{tabular}{c@{\quad}c@{\ $\rightarrow$\ }c@{\quad}c@{\ $\rightarrow$\ }c}
+        单引号 & \verb|`| & ` & \verb|'| & ' \\
+        双引号 & \verb|``| & `` & \verb|''| & '' \\
+        美式连续嵌套引号 & \verb|```| & ``` & \verb|'{}''| & '{}'' \\
+        英式连续嵌套引号 & \verb|`{}``| & `{}`` & \verb|'''| & ''' \\
+    \end{tabular}
+\end{center}
+注意其中 \texttt{\{\}} 起到的分组作用.
+
+此外, 如果想使用全角符号同时想使用实心点格式的句号, 可以使用 \texttt{quanjiao} 选项.
+源文档中的 ``。'' 会被自动替换成 ``．''.
+这时, 也就可以风格统一地直接使用中文输入法给出的引号 ``“”‘’'' 而不用管前面提到的映射了.
+具体请参见 \texttt{README.md} 中介绍的标点选项.
+
+\note{其实“和``以及”和''分别是同一个 Unicode 字符, 只是被分配了不同的字体.}
 
 \end{document}

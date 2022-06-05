@@ -1,4 +1,4 @@
-# `PKUMpLtX`
+# `PKUMpLtX`, [项目页]
 *A LaTeX document class for 'Modern Physics Laboratory' in PKU based on [`revtex4-2`]*
 
 + Copyright (C) 2013. Modern Phys. Lab, School of Phys., Peking Univ.
@@ -7,8 +7,10 @@
 + Copyright (C) 2021--2022. Lin Xuchen <linxc_at_pku.edu.cn>
 
 This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International
-License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/
+License. To view a copy of this license, visit [`LICENSE.md`]
 or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+希望本模板能帮助同学们专注报告内容, 减少对格式等的不必要的时间消耗.
 
 ## 文件内容
 
@@ -22,10 +24,12 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
 ## 使用方法
 
-只需将 [`mpltx.cls`] 复制/链接到当前文件夹, (或者放置到用户个人的 `$TEXMF`, 如果你知道这是什么意思的话), 然后使用该文档类
+只需将 [`mpltx.cls`] 复制/链接到当前文件夹, (或者放置到用户个人的 `$TEXMF`, 如果你知道这是什么意思的话. 比如 MikTeX 上给出了[这个介绍](https://miktex.org/kb/texmf-roots#:~:text=Your%20own%20TEXMF%20root%20directories)), 然后使用该文档类
 ```latex
 \documentclass[<options>]{mpltx}
 ```
+`[<options>]` 为可选的选项列表, 可以给入标准文档类 `article` 以及 [`revtex4-2`] 可接受的任何参数.
+但只建议传 [`mpltx.cls`] 定义的中文字体参数和标点符号参数 (见下).
 使用前推荐先仔细查看 [`template.tex`] 和 [`template.pdf`] 文件.
 如果有魔改需求可以查看 [`mpltx.cls`]
 
@@ -36,12 +40,12 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 ### 字体选项
 + `default`: 默认选项, 使用 [`xeCJK`] 默认的开源 Fandol 字体.
   需要安装 [`fandol`] 宏包. 如果你使用 Overleaf, 用这个选项或者下方的 `notofandol` 都可以.
-+ `noto`: 使用 Noto CJK SC 系列, 一款优秀的开源中文字体, 可在[其主页](https://github.com/googlefonts/noto-cjk/releases)下载最新版,
-  或者下载 [`notocjksc`] 宏包也可以 (但宏包的字体版本是 18 年的).
-  但仿宋体和楷体 Noto 未提供, 故自动使用 Windows 或 macOS 自带的相应字体. **Linux 用户很可能会因为没有相应的商业仿宋体和楷体字体而出错**, 请改用下方的 `notofandol`, 或改用 `diy` 自行使用 `\setCJK*font` 等命令配置.
-  + `notofandol`: 用 Noto 系列搭配 Fandol 字体.
-+ `windows`: 使用 Windows 系统自带字体.
-+ `macos`: 使用 macOS 系统自带字体.
++ `noto`: 使用 Noto CJK SC 系列的宋体与黑体. 这是一款优秀的开源中文字体, 可在[其主页](https://github.com/googlefonts/noto-cjk/releases)下载最新版的 Noto CJK Serif SC (即思源宋体) 和 Noto CJK Sans SC (即思源黑体),
+  或者安装 [`notocjksc`] 宏包也可以 (但宏包的字体版本是 18 年的).
+  但仿宋体和楷体 Noto 未提供, 故将自动使用 Windows 或 macOS 自带的相应字体. **Linux 用户很可能会因为没有相应的商业仿宋体和楷体字体而出错**, 请改用下方的 `notofandol`, 或改用 `diy` 自行使用 `\setCJK*font` 等命令配置.
+  + `notofandol`: 用 Fandol 的仿宋体和楷体搭配 Noto 系列的宋体与黑体.
++ `windows`: 使用 Windows 系统自带字体 (宋体为中易宋体, 粗体为华文中宋; 黑体为等线).
++ `macos`: 使用 macOS 系统自带字体 (黑体为苹方).
 + `diy`: 自己使用 `\setCJK*font` 命令配置.
 
 比如, Windows 用户就可以这样子调用
@@ -50,13 +54,13 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 ```
 
 ### 标点选项
-报告要求是 ''全文标点符号除 '顿号' 外, 其他用英文半角标点符号''.
-但也可能有人想使用全角标点, 或者使用全角标点但把句号从 ''。'' 改为 ''．''.
+报告要求是 "全文标点符号除 '顿号' 外, 其他用英文半角标点符号".
+但也可能有人想使用全角标点, 或者使用全角标点但把句号从 "。" 改为 "．".
 + 如果你想完全用半角标点, 不用任何选项, 直接用半角标点输入.
 + 如果你想完全用符合 GB/T 15834-2011 的全角标点, 直接用全角标点输入.
-+ 如果你想像 GB/T 15834-1995 所说, ''在科技文档中用实心全角圆点 '．' 替代句号 '。''', 
-  + 如果你有方便的直接输入 '．' 的方法, 直接输入;
-  + 如果没有, 使用 `quanjiao` 选项, 在源文件中直接用 '。' 做句号.
++ 如果你想像 GB/T 15834-1995 所说, "在科技文档中用实心全角圆点 '．' 替代句号 '。'", 
+  + 如果你有方便的直接输入 "．" 的方法, 直接输入;
+  + 如果没有, 使用 `quanjiao` 选项, 在源文件中直接用 "。" 做句号.
     [`xeCJK`] 会自动帮你做替换.
 
 ### 编译
@@ -86,7 +90,7 @@ xelatex template
 具体请参考其文档.
 
 + [`siunitx`] 用于便利地打出格式良好的物理量的值和单位, 如 `\qnty{299792.458}{\km\per\s}`， `$g=\qnty{9.801}{m.s^{-2}}$`.
-注意, 此宏包定义的 ''物理量'' 命令 `\qty` 与 `physics` 的 ''自动调整括号大小'' 命令重名.
+注意, 此宏包定义的 "物理量" 命令 `\qty` 与 `physics` 的 "自动调整括号大小" 命令重名.
 所以, 本模板将本宏包的命令**重命名**为 `\qnty`.
 
 + [`dcolumn`] $\LaTeX{}2\epsilon$ 基础包的一个, 提供按小数点对齐的表格列格式.
@@ -101,8 +105,10 @@ xelatex template
 
 ## 反馈
 
-如果使用中发现问题或有建议, 请联系 Lin Xuchen <linxc_at_pku.edu.cn>.
+如果使用中发现问题或有建议, 请联系 Lin Xuchen <linxc_at_pku.edu.cn>, 或到[项目页]提 issue.
 如果有大佬愿意改进这个写得稀烂的文档类, 也欢迎动手.
+
+[项目页]: https://github.com/CastleStar14654/PKUMpLtX
 
 [`mpltx.cls`]: mpltx.cls
 [`template.tex`]: template.tex
@@ -111,6 +117,7 @@ xelatex template
 [`fig/`]: fig/
 [`figgen.py`]: figgen.py
 [`fig.mplstyle`]: fig.mplstyle
+[`LICENSE.md`]: LICENSE.md
 
 [`revtex4-2`]: https://www.ctan.org/pkg/revtex
 [lshort-zh-cn]: http://mirrors.ctan.org/info/lshort/chinese/lshort-zh-cn.pdf
@@ -122,3 +129,4 @@ xelatex template
 [`siunitx`]: https://www.ctan.org/pkg/siunitx
 [`caption`]: https://www.ctan.org/pkg/caption
 [`subfig`]: https://www.ctan.org/pkg/subfig
+[`dcolumn`]: https://www.ctan.org/pkg/dcolumn
