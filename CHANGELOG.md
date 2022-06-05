@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## 2022-06-06, [v2.0.2]
 
 ### cls
 
@@ -18,7 +18,6 @@
 ### readme
 
 1. 修改了 typo 与格式.
-2. 改进了文档.
 
 ## 2022-05-25, [v2.0.1]
 
@@ -65,6 +64,7 @@
 
 `*.cls` 初版本.
 
-[Unreleased]: https://github.com/CastleStar14654/PKUMpLtX/compare/v2.0.1...HEAD
+[Unreleased]: https://github.com/CastleStar14654/PKUMpLtX/compare/v2.0.2...HEAD
+[v2.0.2]:     https://github.com/CastleStar14654/PKUMpLtX/compare/v.2.0.1...v2.0.2
 [v2.0.1]:     https://github.com/CastleStar14654/PKUMpLtX/compare/v.2.0...v2.0.1
 [v2.0]:       https://github.com/CastleStar14654/PKUMpLtX/releases/tag/v.2.0
