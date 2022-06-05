@@ -65,6 +65,6 @@
 `*.cls` 初版本.
 
 [Unreleased]: https://github.com/CastleStar14654/PKUMpLtX/compare/v2.0.2...HEAD
-[v2.0.2]:     https://github.com/CastleStar14654/PKUMpLtX/compare/v.2.0.1...v2.0.2
+[v2.0.2]:     https://github.com/CastleStar14654/PKUMpLtX/compare/v2.0.1...v2.0.2
 [v2.0.1]:     https://github.com/CastleStar14654/PKUMpLtX/compare/v.2.0...v2.0.1
 [v2.0]:       https://github.com/CastleStar14654/PKUMpLtX/releases/tag/v.2.0
