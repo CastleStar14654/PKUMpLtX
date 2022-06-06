@@ -4,9 +4,7 @@
 % Please read `README.md' and the template file before using
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{mpltx}[2022/05/25 XeLaTeX class for MP Lab in PKU]
-
-\def\currversion{2.0.2}
+\ProvidesClass{mpltx}[2022/06/06 v2.0.2 XeLaTeX class for MP Lab in PKU]
 
 % 基于 APS 的文档类 revtex4-2; 参数含义:
 % APS 系列期刊 Phys. Rev. E 格式预印本, 显示关键词, A4
@@ -18,10 +16,8 @@
 \RequirePackage{amssymb}
 % revtex4-2 推荐的数据展示表格工具
 \RequirePackage{dcolumn}
-% 控制表格对齐方式
-\RequirePackage{array}
-% 对宽表格进行90度旋转
-\RequirePackage{rotating}
+% 表格宏包
+\RequirePackage{array,rotating,tabularx}
 % 插入图片
 \RequirePackage{graphicx}
 % [外部宏包] 国际单位制与数值支持

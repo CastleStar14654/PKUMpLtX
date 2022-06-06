@@ -12,6 +12,12 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
 希望本模板能帮助同学们专注报告内容, 减少对格式等的不必要的时间消耗.
 
+## 下载方式
+
++ 稳定版: 前往 [Releases](https://github.com/CastleStar14654/PKUMpLtX/releases) 页面下载最新版本的 `Source code` 文件.
++ 最新: 在[项目页]下载最新源代码.
++ `git clone`: 如果会使用 git, 可以直接 `git clone` 本项目. 之后可以直接 `pull` 获取更新.
+
 ## 文件内容
 
 + [`mpltx.cls`]\: 模板文件.
@@ -52,6 +58,16 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 ```latex
 \documentclass[windows]{mpltx}
 ```
+
+各平台可以支持的字体选项如下 (叹号表示需要安装特定的字体宏包获开源字体)
+|    选项    | Windows | macOS | Linux | Overleaf |
+| :--------: | :-----: | :---: | :---: | :------: |
+|  default   |   ✓!    |  ✓!   |  ✓!   |    ✓     |
+|    noto    |   ✓!    |  ✓!   |   ✗   |    ✗     |
+| notofandol |   ✓!    |  ✓!   |  ✓!   |    ✓     |
+|  windows   |    ✓    |   ✗   |   ✗   |    ✗     |
+|   macos    |    ✗    |   ✓   |   ✗   |    ✗     |
+|    diy     |    ✓    |   ✓   |   ✓   |    ✓     |
 
 ### 标点选项
 报告要求是 "全文标点符号除 '顿号' 外, 其他用英文半角标点符号".

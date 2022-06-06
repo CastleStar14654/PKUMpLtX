@@ -1,5 +1,15 @@
 # Changelog
 
+## [Unreleased]
+
+### cls
+
+1. 调用了 `tabularx`.
+
+### doc
+
+1. 增加了对下载和字体的说明.
+
 ## 2022-06-06, [v2.0.2]
 
 ### cls
