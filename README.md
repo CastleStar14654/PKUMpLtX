@@ -12,11 +12,32 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
 希望本模板能帮助同学们专注报告内容, 减少对格式等的不必要的时间消耗.
 
-## 下载方式
+- [下载](#下载)
+  - [\[可选\] 安装](#可选-安装)
+- [文件内容](#文件内容)
+- [使用方法](#使用方法)
+  - [字体选项](#字体选项)
+  - [标点选项](#标点选项)
+  - [编译](#编译)
+- [自动调用的宏包](#自动调用的宏包)
+  - [其他需要注意的外部宏包](#其他需要注意的外部宏包)
+- [反馈](#反馈)
+
+## 下载
 
 + 稳定版: 前往 [Releases](https://github.com/CastleStar14654/PKUMpLtX/releases) 页面下载最新版本的 `Source code` 文件.
 + 最新: 在[项目页]下载最新源代码.
 + `git clone`: 如果会使用 git, 可以直接 `git clone` 本项目. 之后可以直接 `pull` 获取更新.
+
+### \[可选\] 安装
+
++ 不想折腾的话直接将 [`mpltx.cls`] 复制/链接到编写报告的当前文件夹, 然后按[使用方法](#使用方法)中描述的那样在 `*.tex` 中调用即可.
++ 如果想要正经地安装这个宏包, 从而不用每次手动复制/链接:
+  + 请找到用户的 $\mathrm{\TeX}$ 根目录位置 (`$TEXMF`).
+    + 保险起见, 建议创建一个新的供自定义宏包使用的 `$TEXMF`. 不同的发行版可能有不同的创建方式, 比如 $\mathrm{MiK\TeX}$ 的相关文档是[这个页面](https://miktex.org/faq/local-additions).
+  + 将整个 `PKUMpLtX` 文件夹移动到 `$TEXMF/tex/latex`.
+    + 所以, 实际上可以直接在 `$TEXMF/tex/latex` 进行 `git clone`.
+  + 可能需要刷新缓存.
 
 ## 文件内容
 
@@ -30,16 +51,16 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
 ## 使用方法
 
-只需将 [`mpltx.cls`] 复制/链接到当前文件夹, (或者放置到用户个人的 `$TEXMF`, 如果你知道这是什么意思的话. 比如 MikTeX 上给出了[这个介绍](https://miktex.org/kb/texmf-roots#:~:text=Your%20own%20TEXMF%20root%20directories)), 然后使用该文档类
+只需将 [`mpltx.cls`] 复制/链接到当前文件夹, (如果[安装](#可选-安装)了, 则不用做复制或链接), 然后使用该文档类
 ```latex
 \documentclass[<options>]{mpltx}
 ```
 `[<options>]` 为可选的选项列表, 可以给入标准文档类 `article` 以及 [`revtex4-2`] 可接受的任何参数.
 但只建议传 [`mpltx.cls`] 定义的中文字体参数和标点符号参数 (见下).
 使用前推荐先仔细查看 [`template.tex`] 和 [`template.pdf`] 文件.
-如果有魔改需求可以查看 [`mpltx.cls`]
+如果有魔改需求可以自定义 [`mpltx.cls`]
 
-如果初次使用 $\LaTeX{}$, 推荐以下入门文档:
+如果初次使用 $\mathrm{\LaTeX{}}$, 推荐以下入门文档:
 1. [lshort-zh-cn]
 2. [lnotes2]
 
@@ -86,7 +107,7 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 3. 更新参考文献引用: `xelatex %DOC%` 一次, `bibtex %DOC%` 一次, `xelatex %DOC%` 两次.
 
 以上的 `%DOC%` 均为 `*.tex` 主文件去掉拓展名后的剩余部分.
-绝大多数 $\LaTeX{}$ 编辑器在适当配置后可以为你完成这些工作.
+绝大多数 $\mathrm{\LaTeX{}}$ 编辑器在适当配置后可以为你完成这些工作.
 
 比如, 示例文档的编译为
 ```bash
@@ -109,7 +130,7 @@ xelatex template
 注意, 此宏包定义的 "物理量" 命令 `\qty` 与 `physics` 的 "自动调整括号大小" 命令重名.
 所以, 本模板将本宏包的命令**重命名**为 `\qnty`.
 
-+ [`dcolumn`] $\LaTeX{}2\epsilon$ 基础包的一个, 提供按小数点对齐的表格列格式.
++ [`dcolumn`] $\mathrm{\LaTeX{}}2\epsilon$ 基础包的一个, 提供按小数点对齐的表格列格式.
 `siunitx` 其实也提供了类似功能, 感兴趣的可以参考两者文档.
 
 ### 其他需要注意的外部宏包
