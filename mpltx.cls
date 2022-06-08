@@ -165,7 +165,7 @@
 % 定义表格中的数字格式, d{a.b} 即为按小数点区分, 前留 a 位, 后留 b 位
 \newcolumntype{d}[1]{D{.}{.}{#1}}
 % 简写 multicolumn
-\newcommand{\mc}[3]{\multicolumn{#1}{#2}{#3}}
+\let\mc\multicolumn
 
 % ----- Chinese localization ------
 % [外部宏包] 中文支持
@@ -211,4 +211,11 @@
   }{%
     \Hy@MakeCurrentHrefAuto{\Hy@chapapp*}%
   }{}{}%
+}
+
+% ----- Compatibility -----
+\AtBeginDocument{
+  \IfPackageLoadedTF{caption}{%
+    \ClassError{mpltx}{package `caption' is incompatible}{do not use `caption'}
+  }{}
 }

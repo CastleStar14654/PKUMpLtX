@@ -19,6 +19,7 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
   - [字体选项](#字体选项)
   - [标点选项](#标点选项)
   - [编译](#编译)
+  - [新定义的命令列表](#新定义的命令列表)
 - [自动调用的宏包](#自动调用的宏包)
   - [其他需要注意的外部宏包](#其他需要注意的外部宏包)
 - [反馈](#反馈)
@@ -123,6 +124,11 @@ bibtex template
 xelatex template
 xelatex template
 ```
+
+### 新定义的命令列表
++ `\emailphone[<pretext>]{<email>}{<phone>}`: 在当前位置插入脚注, 内容为 `<pretext><email>; <phone>` 且电子邮件地址转为链接.
++ `\jj`, `\ii`, `\ee`: 数学模式下 j, i 和 e 的 `\mathrm` 版本.
++ `\mc`: `\multicolumn` 的别名.
 
 ## 自动调用的宏包
 
