@@ -16,8 +16,14 @@
 \emailphone{email@pku.edu.cn}{(86)152XXXXXXXX}
 % 如果改用 \email 则仅需要邮箱参数
 \affiliation{北京大学物理学院\quad 学号: 20000xxxxx}
-% 可以使用 \zhdate 自动生成中文日期
-\date{\zhdate{2022/6/6}, v2.0.2}
+% % 可以使用 \zhdate 自动生成中文日期, 如
+% \date{\zhdate{2020/12/1}}
+% % 也可使用 babel 的 \localedate, 如
+% \date{\localedate{2020}{12}{1}}
+% % 两者均会输出 `2020 年 12 月 1 日'
+% 下面这行是为了自动输出正确版本号, 正式报告请替换为上面的两种 \date 之一
+\makeatletter\date{\mpltx@filedate, \mpltx@fileversion}\makeatother
+
 \begin{abstract}
     此部分为摘要.
     200--300字, 说明用什么方法做了什么事, 由此得到什么结果和结论, 有何意义.

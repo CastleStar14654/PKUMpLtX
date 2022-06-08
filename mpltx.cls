@@ -190,3 +190,15 @@
 \AtBeginDocument{\setlength{\parindent}{2em}}
 % 处理 siunitx 和 physics 对 qty 重名: 前者变成 \qnty
 \AtBeginDocument{\NewCommandCopy\qnty\SI}
+
+% copy from \GetFileInfo from LaTeX `doc` program
+\def\mpltx@filevergen#1{%
+  \def\mpltx@filename{#1}%
+  \def\@tempb##1 ##2 ##3\relax##4\relax{%
+    \def\mpltx@filedate{##1}%
+    \def\mpltx@fileversion{##2}%
+    \def\mpltx@fileinfo{##3}}%
+  \edef\@tempa{\csname ver@#1\endcsname}%
+  \expandafter\@tempb\@tempa\relax? ? \relax\relax}
+% generate \mpltx@filename \mpltx@filedate etc.
+\mpltx@filevergen{mpltx.cls}
