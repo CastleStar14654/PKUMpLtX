@@ -65,13 +65,14 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 2. [lnotes2]
 
 ### 字体选项
+`font={`**`default`**`|noto|notofandol|windows|macos|diy}`
 + `default`: 默认选项, 使用 [`xeCJK`] 默认的开源 Fandol 字体.
   需要安装 [`fandol`] 宏包. 如果你使用 Overleaf, 用这个选项或者下方的 `notofandol` 都可以.
 + `noto`: 使用 Noto CJK SC 系列的宋体与黑体. 这是一款优秀的开源中文字体, 可在[其主页](https://github.com/googlefonts/noto-cjk/releases)下载最新版的 Noto CJK Serif SC (即思源宋体) 和 Noto CJK Sans SC (即思源黑体),
-  或者安装 [`notocjksc`] 宏包也可以 (但宏包的字体版本是 18 年的).
+  或者安装 [`notocjksc`] 宏包 (但宏包的字体版本是 18 年的).
   但仿宋体和楷体 Noto 未提供, 故将自动使用 Windows 或 macOS 自带的相应字体. **Linux 用户很可能会因为没有相应的商业仿宋体和楷体字体而出错**, 请改用下方的 `notofandol`, 或改用 `diy` 自行使用 `\setCJK*font` 等命令配置.
-  + `notofandol`: 用 Fandol 的仿宋体和楷体搭配 Noto 系列的宋体与黑体.
-+ `windows`: 使用 Windows 系统自带字体 (宋体为中易宋体, 粗体为华文中宋; 黑体为等线).
+  + `notofandol`: 用 Fandol 的仿宋体和楷体搭配 Noto 系列的宋体与黑体. **Fandol 和 Noto 的基线不齐**.
++ `windows`: 使用 Windows 系统自带字体 (都使用华文系列; 除了黑体为等线).
 + `macos`: 使用 macOS 系统自带字体 (黑体为苹方).
 + `diy`: 自己使用 `\setCJK*font` 命令配置.
 
@@ -79,6 +80,12 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 ```latex
 \documentclass[windows]{mpltx}
 ```
+
+以上各选项的字体配置风格如下 (与 `xeCJK` 默认的配置方式有所不同)
+|         | Roman  | Sans Serif | Monospace |
+| :-----: | :----: | :--------: | :-------: |
+| Upright | 宋体类 |   黑体类   |  仿宋类   |
+| Italic  | 仿宋类 |   楷体类   |  楷体类   |
 
 各平台可以支持的字体选项如下 (叹号表示需要安装特定的字体宏包获开源字体)
 |    选项    | Windows | macOS | Linux | Overleaf |

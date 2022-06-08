@@ -2,7 +2,7 @@
 % PKUMpLtX --- A LaTeX document class for 'Modern Physics Laboratory' in PKU based on `revtex4-2`
 %
 % Please read `README.md' and the template file before using
-\documentclass[notofandol]{mpltx}
+\documentclass[font=notofandol]{mpltx}
 
 % 以下三行仅为本文件额外定义的命令
 \hypersetup{colorlinks=true}% 超链接带颜色
@@ -272,5 +272,18 @@
 具体请参见 \texttt{README.md} 中介绍的标点选项.
 
 \note{其实“和``以及”和''分别是同一个 Unicode 字符, 只是被分配了不同的字体.}
+
+\section{DIY 字体效果测试}
+
+\newcommand{\testword}{报告}
+\newcommand{\andbold}{\testword{}\textbf{\testword{}}}
+\newcommand{\testline}{\testword{}\emph{\andbold{}}\andbold{}}
+
+下面分别展示衬线, 无衬线和等宽中文字体效果, 便于检查基线高度等问题.
+\begin{center}
+    \textrm{\testline}\\
+    \textsf{\testline}\\
+    \texttt{\testline}
+\end{center}
 
 \end{document}
