@@ -1,4 +1,5 @@
 # `PKUMpLtX`, [项目页]
+
 *A LaTeX document class for 'Modern Physics Laboratory' in PKU based on [`revtex4-2`]*
 
 + Copyright (C) 2013. Modern Phys. Lab, School of Phys., Peking Univ.
@@ -17,6 +18,7 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 - [文件内容](#文件内容)
 - [使用方法](#使用方法)
   - [字体选项](#字体选项)
+    - [关于字体的进一步说明](#关于字体的进一步说明)
   - [标点选项](#标点选项)
   - [编译](#编译)
   - [新定义的命令列表](#新定义的命令列表)
@@ -66,6 +68,7 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 2. [lnotes2]
 
 ### 字体选项
+
 `font={`**`default`**`|noto|notofandol|windows|macos|diy}`
 + `default`: 默认选项, 使用 [`xeCJK`] 默认的开源 Fandol 字体.
   需要安装 [`fandol`] 宏包. 如果你使用 Overleaf, 用这个选项或者下方的 `notofandol` 都可以.
@@ -74,7 +77,7 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
   但仿宋体和楷体 Noto 未提供, 故将自动使用 Windows 或 macOS 自带的相应字体. **Linux 用户很可能会因为没有相应的商业仿宋体和楷体字体而出错**, 请改用下方的 `notofandol`, 或改用 `diy` 自行使用 `\setCJK*font` 等命令配置.
   + `notofandol`: 用 Fandol 的仿宋体和楷体搭配 Noto 系列的宋体与黑体. **Fandol 和 Noto 的基线不齐**.
 + `windows`: 使用 Windows 系统自带字体 (都使用华文系列; 除了黑体为等线).
-+ `macos`: 使用 macOS 系统自带字体 (黑体为苹方).
++ `macos`: 使用 macOS 系统自带字体 (黑体为苹方). **苹方和其他字体的基线不对齐. 但 macOS 的所有黑体类字体都有这个问题.**
 + `diy`: 自己使用 `\setCJK*font` 命令配置.
 
 比如, Windows 用户就可以这样子调用
@@ -88,7 +91,7 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 | Upright | 宋体类 |   黑体类   |  仿宋类   |
 | Italic  | 仿宋类 |   楷体类   |  楷体类   |
 
-各平台可以支持的字体选项如下 (叹号表示需要安装特定的字体宏包获开源字体)
+各平台可以支持的字体选项如下 (叹号表示需要安装特定的字体宏包或开源字体)
 |    选项    | Windows | macOS | Linux | Overleaf |
 | :--------: | :-----: | :---: | :---: | :------: |
 |  default   |   ✓!    |  ✓!   |  ✓!   |    ✓     |
@@ -98,7 +101,16 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 |   macos    |    ✗    |   ✓   |   ✗   |    ✗     |
 |    diy     |    ✓    |   ✓   |   ✓   |    ✓     |
 
+#### 关于字体的进一步说明
+
+除了上面已经提到的基线不齐的问题外, 还有可能影响输出效果的问题有:
+除 macOS 自带的楷体外, 其他所有的楷体字体都没有粗体, 因此 Sans Serif 和 Monospace 的 `\textit` 与 `\textbf` 连用仅产生 `\textbf` 效果.
+所有的仿宋体字体也是如此, Roman 的 `\textit` 与 `\textbf` 连用也仅产生 `\textbf` 效果.
+对于 Monospace 字体, `AutoFakeBold` 选项被本模板开启, 因此粗体的 Monospace 为伪粗体的仿宋, 效果可能不佳.
+但鉴于对实验报告来说, 使用各种 fancy 字体样式的需求不大, 因此问题应该不是很显著.
+
 ### 标点选项
+
 报告要求是 "全文标点符号除 '顿号' 外, 其他用英文半角标点符号".
 但也可能有人想使用全角标点, 或者使用全角标点但把句号从 "。" 改为 "．".
 + 如果你想完全用半角标点, 不用任何选项, 直接用半角标点输入.
@@ -109,6 +121,7 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
     [`xeCJK`] 会自动帮你做替换.
 
 ### 编译
+
 由于使用了 [`xeCJK`], 需用 `xelatex` 编译:
 1. 常规编译: `xelatex %DOC%` 一次;
 2. 更新超链接: `xelatex %DOC%` 两次;
@@ -126,6 +139,7 @@ xelatex template
 ```
 
 ### 新定义的命令列表
+
 + `\emailphone[<pretext>]{<email>}{<phone>}`: 在当前位置插入脚注, 内容为 `<pretext><email>; <phone>` 且电子邮件地址转为链接.
 + `\jj`, `\ii`, `\ee`: 数学模式下 j, i 和 e 的 `\mathrm` 版本.
 + `\mc`: `\multicolumn` 的别名.
@@ -138,18 +152,15 @@ xelatex template
 + [`physics`] 提供了众多方便的物理符号与公式输入,
 如导数符号命令 `\dv{f}{x}`, 自动调整大小的括号 `\qty()` 等.
 具体请参考其文档.
-
 + [`siunitx`] 用于便利地打出格式良好的物理量的值和单位, 如 `\qnty{299792.458}{\km\per\s}`， `$g=\qnty{9.801}{m.s^{-2}}$`.
 注意, 此宏包定义的 "物理量" 命令 `\qty` 与 `physics` 的 "自动调整括号大小" 命令重名.
 所以, 本模板将本宏包的命令**重命名**为 `\qnty`.
-
 + [`dcolumn`] $\mathrm{\LaTeX{}}2\epsilon$ 基础包的一个, 提供按小数点对齐的表格列格式.
 `siunitx` 其实也提供了类似功能, 感兴趣的可以参考两者文档.
 
 ### 其他需要注意的外部宏包
 
-+ [`caption`] 存在与本模板的基础 `revtex4-2` 不兼容的情况, 避免使用.
-
++ [`caption`] 存在与本模板的基础 `revtex4-2` 不兼容的情况, 请勿使用.
 + [`subfig`] 默认会自动调用 `caption`.
 调用时请使用选项 `caption=false`.
 
