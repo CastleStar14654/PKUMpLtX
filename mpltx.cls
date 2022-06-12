@@ -43,9 +43,9 @@
 
 
 % 全角句点映射
-\def\@mapping{}
+\def\mpltx@mapping{}
 \ifmpltx@quanjiao%
-  \def\@mapping{,Mapping={fullwidth-stop}}%
+  \def\mpltx@mapping{,Mapping={fullwidth-stop}}%
 \fi
 % 提供字体配置
 \def\mpltx@fonttest@fandol{% 检测 fandol 宏包有没有安装
@@ -53,7 +53,7 @@
     \ClassError{mpltx}{'fandol' is not installed}{Please install package 'fandol'}
   }
 }
-\def\mpltx@fonttest@testnoto{% 检测 noto 字体有没有安装
+\def\mpltx@fonttest@noto{% 检测 noto 字体有没有安装
   \IfFontExistsTF{Noto Serif CJK SC}{}{
     \ClassError{mpltx}{Noto fonts are not installed}{%
       Please install package `notocjksc`\MessageBreak
@@ -64,33 +64,33 @@
 \IfStrEqCase{\mpltx@font}{%
   {default}{%
     \mpltx@fonttest@fandol%
-    \setCJKmainfont[BoldFont={FandolSong Bold},ItalicFont={FandolFang}\@mapping]{FandolSong}%
-    \setCJKsansfont[BoldFont={FandolHei Bold},ItalicFont={FandolKai}\@mapping]{FandolHei}%
-    \setCJKmonofont[AutoFakeBold=true,ItalicFont={FandolKai}\@mapping]{FandolFang}%
+    \setCJKmainfont[BoldFont={FandolSong Bold},ItalicFont={FandolFang}\mpltx@mapping]{FandolSong}%
+    \setCJKsansfont[BoldFont={FandolHei Bold},ItalicFont={FandolKai}\mpltx@mapping]{FandolHei}%
+    \setCJKmonofont[AutoFakeBold=true,ItalicFont={FandolKai}\mpltx@mapping]{FandolFang}%
   }{noto}{%
-    \mpltx@fonttest@testnoto%
+    \mpltx@fonttest@noto%
     \ifwindows{
-      \setCJKmainfont[BoldFont={Noto Serif CJK SC Bold},ItalicFont={FangSong}\@mapping]{Noto Serif CJK SC}%
-      \setCJKsansfont[BoldFont={Noto Sans CJK SC Bold},ItalicFont={KaiTi}\@mapping]{Noto Sans CJK SC}%
-      \setCJKmonofont[AutoFakeBold=true,ItalicFont={KaiTi}\@mapping]{FangSong}}%
+      \setCJKmainfont[BoldFont={Noto Serif CJK SC Bold},ItalicFont={FangSong}\mpltx@mapping]{Noto Serif CJK SC}%
+      \setCJKsansfont[BoldFont={Noto Sans CJK SC Bold},ItalicFont={KaiTi}\mpltx@mapping]{Noto Sans CJK SC}%
+      \setCJKmonofont[AutoFakeBold=true,ItalicFont={KaiTi}\mpltx@mapping]{FangSong}}%
     \else{
-      \setCJKmainfont[BoldFont={Noto Serif CJK SC Bold},ItalicFont={STFangsong}\@mapping]{Noto Serif CJK SC}%
-      \setCJKsansfont[BoldFont={Noto Sans CJK SC Bold},ItalicFont={KaiTi SC},BoldItalicFont={KaiTi SC Bold},\@mapping]{Noto Sans CJK SC}%
-      \setCJKmonofont[AutoFakeBold=true,ItalicFont={KaiTi SC},BoldItalicFont={KaiTi SC Bold}\@mapping]{STFangsong}}%
+      \setCJKmainfont[BoldFont={Noto Serif CJK SC Bold},ItalicFont={STFangsong}\mpltx@mapping]{Noto Serif CJK SC}%
+      \setCJKsansfont[BoldFont={Noto Sans CJK SC Bold},ItalicFont={KaiTi SC},BoldItalicFont={KaiTi SC Bold},\mpltx@mapping]{Noto Sans CJK SC}%
+      \setCJKmonofont[AutoFakeBold=true,ItalicFont={KaiTi SC},BoldItalicFont={KaiTi SC Bold}\mpltx@mapping]{STFangsong}}%
     \fi
   }{notofandol}{%
-    \mpltx@fonttest@testnoto\mpltx@fonttest@fandol%
-    \setCJKmainfont[BoldFont={Noto Serif CJK SC Bold},ItalicFont={FandolFang}\@mapping]{Noto Serif CJK SC}%
-    \setCJKsansfont[BoldFont={Noto Sans CJK SC Bold},ItalicFont={FandolKai}\@mapping]{Noto Sans CJK SC}%
-    \setCJKmonofont[AutoFakeBold=true,ItalicFont={FandolKai}\@mapping]{FandolFang}
+    \mpltx@fonttest@noto\mpltx@fonttest@fandol%
+    \setCJKmainfont[BoldFont={Noto Serif CJK SC Bold},ItalicFont={FandolFang}\mpltx@mapping]{Noto Serif CJK SC}%
+    \setCJKsansfont[BoldFont={Noto Sans CJK SC Bold},ItalicFont={FandolKai}\mpltx@mapping]{Noto Sans CJK SC}%
+    \setCJKmonofont[AutoFakeBold=true,ItalicFont={FandolKai}\mpltx@mapping]{FandolFang}
   }{windows}{%
-    \setCJKmainfont[BoldFont={STZhongsong},ItalicFont={STFangsong}\@mapping]{STSong}%
-    \setCJKsansfont[BoldFont={DengXian Bold},ItalicFont={STKaiti}\@mapping]{DengXian}%
-    \setCJKmonofont[AutoFakeBold=true,ItalicFont={STKaiti}\@mapping]{STFangsong}
+    \setCJKmainfont[BoldFont={STZhongsong},ItalicFont={STFangsong}\mpltx@mapping]{STSong}%
+    \setCJKsansfont[BoldFont={DengXian Bold},ItalicFont={STKaiti}\mpltx@mapping]{DengXian}%
+    \setCJKmonofont[AutoFakeBold=true,ItalicFont={STKaiti}\mpltx@mapping]{STFangsong}
   }{macos}{%
-    \setCJKmainfont[BoldFont={Songti SC Bold},ItalicFont={STFangsong}\@mapping]{Songti SC}%
-    \setCJKsansfont[BoldFont={PingFang SC Semibold},ItalicFont={Kaiti SC},BoldItalicFont={KaiTi SC Bold}\@mapping]{PingFang SC}%
-    \setCJKmonofont[AutoFakeBold=true,ItalicFont={KaiTi SC},BoldItalicFont={KaiTi SC Bold}\@mapping]{STFangsong}
+    \setCJKmainfont[BoldFont={Songti SC Bold},ItalicFont={STFangsong}\mpltx@mapping]{Songti SC}%
+    \setCJKsansfont[BoldFont={PingFang SC Semibold},ItalicFont={Kaiti SC},BoldItalicFont={KaiTi SC Bold}\mpltx@mapping]{PingFang SC}%
+    \setCJKmonofont[AutoFakeBold=true,ItalicFont={KaiTi SC},BoldItalicFont={KaiTi SC Bold}\mpltx@mapping]{STFangsong}
   }{diy}{}
 }[\ClassError{mpltx}{unkown 'font' value}{check for 'font' option}]
 
@@ -104,18 +104,18 @@
 % 参考文献格式
 \bibliographystyle{apsrev4-2}
 % 让 email 加上手机号
-\newcommand*\emailphone[3][]{\begingroup\sanitize@url\@emaildouble{#1}{#2}{#3}}%
-\def\@emaildouble#1#2#3{%
+\newcommand*\emailphone[3][]{\begingroup\sanitize@url\mpltx@emaildouble{#1}{#2}{#3}}%
+\def\mpltx@emaildouble#1#2#3{%
  \endgroup
  \@AF@join{#1\href{mailto:#2}{#2}; #3}%
 }%
 % 摘要
 \def\frontmatter@abstractwidth{400\p@}%摘要收窄
-\def\frontmatter@abstractfont{%摘要开头空两格
- \small
- \parindent2em\relax
- \adjust@abstractwidth
-}
+\patchcmd{\frontmatter@abstractfont}
+  {1em}
+  {2em}%摘要开头空两格
+  {}
+  {}
 % 防止首页大段空白
 % 来自 https://tex.stackexchange.com/questions/413116/how-to-prevent-page-break-in-revtex-4-1
 \patchcmd{\frontmatter@abstract@produce}
@@ -131,13 +131,13 @@
 \linespread{1.3}
 \setlength{\footnotesep}{1em}
 \patchcmd{\footnotesize}
-  {\@setfontsize\footnotesize\@xpt{14.5pt}}
-  {\@setfontsize\footnotesize\@xpt{12pt}}
+  {\@xpt{14.5pt}}
+  {\@xpt{\@xiipt}}
   {}
   {}
 \patchcmd{\small}
-  {\@setfontsize\small\@xipt{14.5pt}}
-  {\@setfontsize\small\@xipt{13pt}}
+  {\@xipt{14.5pt}}
+  {\@xipt{13\p@}}
   {}
   {}
 
@@ -198,11 +198,11 @@
 \RequirePackage[all]{hypcap}
 % PDF 书签摘要名字
 \newcommand{\bookmarkabstractname}{摘要}
-\def\addcontents@abstract{%
-  \phantomsection
-  \expandafter\def\csname Parent0\endcsname{section*.2}%
-  \expandafter\@argswap@val\expandafter{\bookmarkabstractname}{\addcontentsline{toc}{abstract}}%
-}%
+\patchcmd{\phantomsection}{%
+    \abstractname%
+  }{%
+    \bookmarkabstractname%
+  }{}{}
 % revtex 内部对 \section 的更改使得 hyperref 对 \appendix 的修改没有产生效果
 % 这里做了修复
 \appto\appendix{

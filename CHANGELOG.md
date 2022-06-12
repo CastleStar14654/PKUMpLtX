@@ -4,7 +4,7 @@
 
 ### Changed
 
-1. 代码重构.
+1. 代码重构, 重命名了内部变量, 为兼容性更多使用 `\patchcmd`
 2. 字体选项现通过关键字参数传入.
 3. 调整了部分字体配置.
 4. 为兼容将 `\IfPackageLoadedTF` 改回 `\@ifpackageloaded`
