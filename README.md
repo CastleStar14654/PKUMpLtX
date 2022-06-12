@@ -82,7 +82,7 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
 比如, Windows 用户就可以这样子调用
 ```latex
-\documentclass[windows]{mpltx}
+\documentclass[font=windows]{mpltx}
 ```
 
 以上各选项的字体配置风格如下 (与 `xeCJK` 默认的配置方式有所不同)
@@ -122,7 +122,8 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
 ### 编译
 
-由于使用了 [`xeCJK`], 需用 `xelatex` 编译:
+由于使用了 [`xeCJK`], 需用 `xelatex` 编译.
+为避免编码的问题, 所有源代码请用 UTF-8 保存 (这应该是大多数现代纯文本编辑器的默认配置).
 1. 常规编译: `xelatex %DOC%` 一次;
 2. 更新超链接: `xelatex %DOC%` 两次;
 3. 更新参考文献引用: `xelatex %DOC%` 一次, `bibtex %DOC%` 一次, `xelatex %DOC%` 两次.
