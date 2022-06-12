@@ -28,7 +28,7 @@
 \RequirePackage{kvoptions}
 % [外部宏包] 字符串处理
 \RequirePackage{xstring}
-% 用于防止首页大段空白需要使用的宏包, 勿删除
+% 更改 revtex 命令定义
 \RequirePackage{etoolbox}
 % [外部宏包] 平台类型检测
 \RequirePackage{ifplatform}
