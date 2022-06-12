@@ -8,7 +8,7 @@
 + Copyright (C) 2021--2022. Lin Xuchen <linxc_at_pku.edu.cn>
 
 This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International
-License. To view a copy of this license, visit [`LICENSE.md`]
+License. To view a copy of this license, visit [`LICENSE`]
 or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
 希望本模板能帮助同学们专注报告内容, 减少对格式等的不必要的时间消耗.
@@ -31,6 +31,7 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 + 稳定版: 前往 [Releases](https://github.com/CastleStar14654/PKUMpLtX/releases) 页面下载最新版本的 `Source code` 文件.
 + 最新: 在[项目页]下载最新源代码.
 + `git clone`: 如果会使用 git, 可以直接 `git clone` 本项目. 之后可以直接 `pull` 获取更新.
+  + 加上 `--filter=blob:none` 选项可以减小下载大小 (比如不下载曾经被 `git` 跟踪的 PDF 文件).
 
 ### \[可选\] 安装
 
@@ -46,7 +47,7 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
 + [`mpltx.cls`]\: 模板文件.
 + `README.md`: 本文件, 说明文档.
-+ [`template.tex`], [`template.pdf`]: 示例报告模板兼说明文档.
++ [`template.tex`]\: 示例报告模板兼说明文档, 可编译得到 `template.pdf`.
   + [`bibli.bib`]\: 用于参考文献生成的文件.
   + [`fig/`]\: 示例报告用到的图片.
 + [`figgen.py`]\: 生成其中一张图片用的脚本.
@@ -60,7 +61,7 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 ```
 `[<options>]` 为可选的选项列表, 可以给入标准文档类 `article` 以及 [`revtex4-2`] 可接受的任何参数.
 但只建议传 [`mpltx.cls`] 定义的中文字体参数和标点符号参数 (见下).
-使用前推荐先仔细查看 [`template.tex`] 和 [`template.pdf`] 文件.
+使用前推荐先仔细查看 [`template.tex`] 文件.
 如果有魔改需求可以自定义 [`mpltx.cls`]
 
 如果初次使用 $\mathrm{\LaTeX{}}$, 推荐以下入门文档:
@@ -174,12 +175,11 @@ xelatex template
 
 [`mpltx.cls`]: mpltx.cls
 [`template.tex`]: template.tex
-[`template.pdf`]: template.pdf
 [`bibli.bib`]: bibli.bib
 [`fig/`]: fig/
 [`figgen.py`]: figgen.py
 [`fig.mplstyle`]: fig.mplstyle
-[`LICENSE.md`]: LICENSE.md
+[`LICENSE`]: LICENSE
 
 [`revtex4-2`]: https://www.ctan.org/pkg/revtex
 [lshort-zh-cn]: http://mirrors.ctan.org/info/lshort/chinese/lshort-zh-cn.pdf

@@ -1,13 +1,13 @@
 # Changelog
 
-## [Unreleased]
+## 2022-06-12, [v2.1]
 
 ### Changed
 
 1. 代码重构, 重命名了内部变量, 为兼容性更多使用 `\patchcmd`
 2. 字体选项现通过关键字参数传入.
 3. 调整了部分字体配置.
-4. 为兼容将 `\IfPackageLoadedTF` 改回 `\@ifpackageloaded`
+4. 为兼容性将 `\IfPackageLoadedTF` 改回 `\@ifpackageloaded`
 
 ### Added
 
@@ -18,7 +18,7 @@
 
 ### Removed
 
-1. `git` 文件夹不再保留编译后的 PDF. 将仅通过 Releases 发布.
+1. `git` 文件夹不再保留编译后的 PDF. 将仅通过 [Releases](https://github.com/CastleStar14654/PKUMpLtX/releases) 发布.
 
 ## 2022-06-06, [v2.0.2]
 
@@ -84,7 +84,8 @@
 
 `*.cls` 初版本.
 
-[Unreleased]: https://github.com/CastleStar14654/PKUMpLtX/compare/v2.0.2...HEAD
+[Unreleased]: https://github.com/CastleStar14654/PKUMpLtX/compare/v2.1...HEAD
+[v2.1]:     https://github.com/CastleStar14654/PKUMpLtX/compare/v2.0.2...v2.1
 [v2.0.2]:     https://github.com/CastleStar14654/PKUMpLtX/compare/v2.0.1...v2.0.2
 [v2.0.1]:     https://github.com/CastleStar14654/PKUMpLtX/compare/v.2.0...v2.0.1
 [v2.0]:       https://github.com/CastleStar14654/PKUMpLtX/releases/tag/v.2.0
