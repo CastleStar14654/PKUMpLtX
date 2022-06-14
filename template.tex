@@ -4,10 +4,28 @@
 % Please read `README.md' and the template file before using
 \documentclass[font=notofandol]{mpltx}
 
-% 以下三行仅为本文件额外定义的命令
+% 以下至 \begin{document} 都仅是本文件为了方便额外定义的命令, 写报告时不需要.
 \hypersetup{colorlinks=true}% 超链接带颜色
 \usepackage{xcolor}
 \newcommand{\note}[1]{{\color{gray}#1}}
+\NewDocumentCommand{\pkg}{s o m}{%
+    \IfBooleanF{#1}{%
+        \IfNoValueTF{#2}%
+            {\href{https://www.ctan.org/pkg/#3}}%
+            {\href{https://www.ctan.org/pkg/#2}}%
+    }%
+    {\textsf{#3}}%
+}
+\newcommand*\cs[1]{\texttt{\textbackslash #1}}
+\newcommand*\env[1]{\textit{\texttt{#1}}}
+\newcommand*\code[1]{\texttt{#1}}
+\newcommand*\file[1]{\textbf{\texttt{#1}}}
+\makeatletter
+\newcommand\releasedate{%
+    \href{https://github.com/CastleStar14654/PKUMpLtX/releases/tag/\mpltx@fileversion}%
+        {\mpltx@filedate, \mpltx@fileversion}}
+\makeatother
+% 以上是本文件为了方便额外定义的命令, 写报告时不需要.
 
 \begin{document}
 
@@ -21,15 +39,14 @@
 % % 也可使用 babel 的 \localedate, 如
 % \date{\localedate{2020}{12}{1}}
 % % 两者均会输出 `2020 年 12 月 1 日'
-% 下面这行是为了自动输出正确版本号, 正式报告请替换为上面的两种 \date 之一
-\makeatletter\date{\mpltx@filedate, \mpltx@fileversion}\makeatother
-
+% 下面的 \date 的参数是为了自动输出正确版本号, 正式报告请替换为上面的两种 \date 之一
+\date{\releasedate}
 \begin{abstract}
     此部分为摘要.
     200--300字, 说明用什么方法做了什么事, 由此得到什么结果和结论, 有何意义.
     摘要中不用缩略词, 不用第一人称.
-    \note{本文档为对 \textsf{PKUMpLtX} 的使用示例, 灰色部分为额外针对 \LaTeX{} 模板使用的说明.
-        也请注意查看源文档 \texttt{template.tex} 中的注释.}
+    \note{本文档为对 \href{https://github.com/CastleStar14654/PKUMpLtX}{\pkg*{PKUMpLtX}} 的使用示例, 灰色部分为额外针对 \LaTeX{} 模板使用的说明.
+        也请注意查看源文档 \file{template.tex} 中的注释.}
 \end{abstract}
 \keywords{关键词1, 关键词2, 共2--4个}
 
@@ -41,30 +58,35 @@
 所研究领域背景和现状,
 有待研究的问题,
 本研究的物理目的和主要方法.
-% 通过空行或者 \par 命令分段
+% 通过空行或者 \par 命令分段. 本行不是空行, 没有分段效果
 引言一定要切合报告正文, 不能漫无目的地介绍背景, 要快速地将读者引导到报告主题上.
 引言篇幅可以在较大范围内变化, 但最长不应超过报告文字篇幅的1/3.
 
 引言撰写可以参考实验讲义和资料, 可以概括复述, 但不能抄.
 \note{这里是一个对实验教材 \cite{jindaishiyan} 的引用示例.}
-\note{注意在 \texttt{\textbackslash{}cite\{\}} 命令前后适当添加空格.
+\note{注意在 \cs{cite} 命令前后适当添加空格.
     可以连续引用.
-    引用标记要出现在在句子结束的标点之前 \cite{jindaishiyan,zamojski2007deep}.}
+    引用标记要出现在标点之前 \cite{GBT7714,pr}.
+    引用处理使用 \textsc{Bib\TeX};
+    对于外文期刊, \file{*.bib} 格式的引用数据很容易从出版商获得;
+    \href{https://scholar.google.com}{Google 学术}和\href{https://xueshu.baidu.com}{百度学术}等文献搜索引擎也提供以\file{*.bib} 格式导出的功能.
+    这里是对首次探测到引力波的报道的引用 \cite{PhysRevLett.116.061102}.}
 
 \section{理论}\label{sec:theory}
 
 可选, 概括本实验必须的理论.
 也可以适当地给出必要的公式, 公式应编号.
-\note{自然对数的底和虚数单位国标和 ISO 都推荐为正体 (虽然国际学界并不怎么实行这点), 本模板提供了 \texttt{\textbackslash{}ii}, \texttt{\textbackslash{}ee}, \texttt{\textbackslash{}jj} 作为简写, 如
+\note{自然对数的底和虚数单位国标 \cite{GBT3102.11} 和 ISO \cite{ISO80000-2} 都推荐为正体 (虽然国际学界并不怎么实行这点), 本模板提供了 \cs{ii}, \cs{ee}, \cs{jj} 作为简写, 如
     \begin{equation}\label{eq:1}
         \ee^{\ii\pi}+1=0.
     \end{equation}
     注意公式应作为句子的一部分在末尾给出必要的标点符号.
     上式可以交叉引用为\autoref{eq:1}.}
 
-\note{此外, 摄氏度和度在2020年初后已可在 \LaTeX{} 中的非数学模式直接打出, 比如 \texttt{\textbackslash{}textdegree} (\textdegree) 和 \texttt{\textbackslash{}textcelsius} (\textcelsius, 虽然 Unicode 更推荐使用\texttt{\textbackslash{}textdegree\{\}C}的写法, 写成\textdegree{}C).
-    再比如, \texttt{\textbackslash{}textmu} (\textmu) 可以给出微米需要的正体词头符号.
-    你也可以使用 \textsf{siunitx} 宏包 (参见 \texttt{README.md}) 来帮助你管理单位格式.}
+\note{此外, 摄氏度和度在2020年初后已可在 \LaTeX{} 中的非数学模式直接打出 \cite{fntguide},
+    比如 \cs{textdegree} (\textdegree) 和 \cs{textcelsius} (\textcelsius, 虽然国际计量局 \cite{si} 和 Unicode 联盟 \cite{unicode} 都更推荐使用 \code{\textbackslash{}textdegree\{\}C} 的写法, 写成 \textdegree{}C).
+    再比如, \cs{textmu} (\textmu) 可以给出微米需要的正体词头符号.
+    你也可以使用 \pkg{siunitx} 宏包 (参见 \file{README.md}) 来帮助你管理单位格式.}
 
 \section{实验装置}
 在此部分需要成段介绍实验方法和条件 (不是罗列操作步骤), 交待清楚到别人能重复你的实验结果的程度.
@@ -76,13 +98,13 @@
 \begin{figure}
     \centering
     \includegraphics[width=0.85\linewidth]{fig/instruments.png}
-    \caption{这个例子展示了如何插入图片以及加标题和标签.
-        \note{推荐使用相对大小插入图片, 比如这里是 0.8 倍当前区域文字宽度 (\texttt{\textbackslash{}linewidth}).
+    \caption{这个例子展示了如何插入图片以及加说明文字.
+        \note{推荐使用相对大小插入图片, 比如这里是 0.8 倍当前区域文字宽度 (\cs{linewidth}).
             推荐对实验装置图和数据图使用矢量图插入}}
     \label{fig:instruments}
 \end{figure}
 
-\note{这里使用了 \texttt{\textbackslash{}autoref\{\}} 命令来自动给出带类型的交叉引用, 注意在命令前后适当使用空格以给出最好的显示效果.
+\note{这里使用了 \cs{autoref} 命令来自动给出带类型的交叉引用, 注意在命令前后适当使用空格以给出最好的显示效果.
     小节, 表格, 公式等都可如此引用, 如: \autoref{sec:theory}, \autoref{ssec:table}, \autoref{sssec:table}, \autoref{eq:1}, \autoref{tab:table_eg}, \autoref{app:exercise}, \autopageref{tab:table_eg}.
     交叉引用的标签尽量取得有意义.}
 
@@ -102,33 +124,35 @@
 
 
 表是被一系列横线隔开的有序排列的数据, 报告格式要求最上和最下两条横线为双横线.
-\note{此双横线格式可以通过 \texttt{ruledtabular} 环境和 \texttt{\textbackslash{}colrule} 命令实现.}
+\note{此双横线格式可以通过 \env{ruledtabular} 环境和 \cs{colrule} 命令实现.}
 例表为\autoref{tab:table_eg}.
 
 \begin{table}
-    \caption{表格示例
-        \footnote{表格标题要简明扼要; 注意使用 \textsf{revtex} 提供的 \texttt{ruledtabular} 环境生成首尾双横线的表格.
+    \caption{表格示例%
+        \footnote{表格标题要简明扼要; 注意使用 \pkg[revtex]{revtex4-2} 提供的 \env{ruledtabular} 环境生成首尾双横线的表格.
             表格中的脚注会自动加在表尾.
-            为方便, 提供了 \texttt{\textbackslash{}mc} 作为 \texttt{\textbackslash{}multicolumn} 的简写.
+            为方便, 提供了 \cs{mc} 作为 \cs{multicolumn} 的简写.
             \href{https://www.tablesgenerator.com}{Tables Generator 网站}可以方便地生成 \LaTeX 表格.}}
     \label{tab:table_eg}
     \begin{ruledtabular}% ruledtabular 环境自动生成首尾双横线, 并调整宽度至占满全行
         \begin{tabular}{cd{4.2}lr}
             % d{a.b} 能使该列中的数据按小数点对齐, 前方留 a 个字符, 后方留 b 个字符
             % 已将 multicolumn 简写为 mc
-            居中    & \mc{1}{c}{数值\footnote{``数值'' 列使用了 \texttt{d} 列格式来按小数点位置对齐. 记得将 d 列的列标题单独设为居中.}} & 靠左    & 靠右 \\
+            居中    & \mc{1}{c}{数值 %
+                \footnote{``数值'' 列使用了 \code{d} 列格式来按小数点位置对齐. 记得将 \code{d} 列的列标题单独设为居中.}
+            }     & 靠左           & 靠右 \\
             \colrule% 中间横线
-            a     & 0.12                                                                            & a     & a \\
-            bbb   & -100                                                                            & bbb   & bbb \\
-            ccccc & 50.8                                                                            & ccccc & ccccc
+            a     & 0.12         & a     & a \\
+            bbb   & -100         & bbb   & bbb \\
+            ccccc & 50.8         & ccccc & ccccc
         \end{tabular}
     \end{ruledtabular}
 \end{table}
 
 从\autoref{tab:table_eg} 可以看出, 对表中各项的注释应作为表的一部分放在表后, 而不是页脚或文尾.
-\note{在表格中使用 \texttt{\textbackslash{}footnote\{\}} 命令时 \LaTeX 会自动将注释放在表尾.
-    但正文中的注释按照 AIP 的要求 (以及 \textsf{revtex} 的实现) 是会和各引用项共同编号并作为参考文献列表的一部分的.
-    因此, 只要你在正文使用了 \texttt{\textbackslash{}footnote\{\}}, 即使你没有引用任何文献 (这一般不太可能), 也需要用 B\textsc{ib}\TeX 处理.
+\note{在表格中使用 \cs{footnote} 命令时 \LaTeX 会自动将注释放在表尾.
+    但正文中的注释按照 AIP 的要求 (以及 \pkg[revtex]{revtex4-2} 的实现) 是会和各引用项共同编号并作为参考文献列表的一部分的.
+    因此, 只要你在正文使用了 \cs{footnote}, 即使你没有引用任何文献 (这一般不太可能), 也需要用 B\textsc{ib}\TeX 处理.
     这里是一个尾注的例子 \footnote{这里是一个尾注的例子}.}
 
 当原始数据和处理过的数据常需要出现在同一表中时, 用软件来处理会非常方便.
@@ -151,11 +175,11 @@
     \centering
     \includegraphics[width=0.8\textwidth]{fig/figsample.pdf}
     \caption{这是数据图的例子.
-        \note{在图的 \texttt{\textbackslash{}caption\{\}} 中应简要说明图中表达的内容, 并对各种符号、线型、颜色的意义做出说明.
+        \note{在图的 \cs{caption} 中应简要说明图中表达的内容, 并对各种符号、线型、颜色的意义做出说明.
             如果有多格数据图, 应清晰地分别做出解释说明.
-            图中的关键性文字 (比如轴名和图例) 的大小最好能和 caption 中的文字大小相当.
+            图中的关键性文字 (比如轴名和图例) 的大小最好能和说明文字中的文字大小相当.
             关于坐标轴名和单位的标法, 可以参看\href{https://journals.aps.org/authors/axis-labels-and-scales-on-graphs-h18}{美国物理学会的说明}.
-            本图是用脚本 \texttt{./figgen.py} 生成的}}
+            本图是用脚本 \file{figgen.py} 生成的}}
     \label{fig:data}
 \end{figure}
 
@@ -183,7 +207,7 @@
 
 \begin{acknowledgments}
     感谢对实验和报告有具体重要帮助的, 又没被列为作者的人.
-    \note{撰写致谢时请使用 \texttt{acknowledgments} 环境.}
+    \note{撰写致谢时请使用 \env{acknowledgments} 环境.}
 \end{acknowledgments}
 
 % bibliography 的参数是你的 *.bib 文件去掉后缀名后的部分
@@ -215,7 +239,7 @@
     \item 课程实验报告应假定读者既不是已知全部实验细节的指导教师, 也不是缺少专业知识的公众, 而是同领域的实验研究者, 或审稿人.
           不能要求读者要在读过课程讲义后才能读懂课程实验报告.
     \item 文本和物理量单位用正体, 物理变量符号用斜体, 矢量矩阵符号用黑斜体.
-          \note{(\textsf{physics} 宏包提供了大量的方便的物理中常用符号的排版工具, 请参考其文档使用)}
+          \note{(\pkg{physics} 宏包提供了大量的方便的物理中常用符号的排版工具, 请参考其文档使用)}
     \item 使用国际标准的缩略词, 符号和法定计量单位时应全文一致, 正文中的缩略
           词在\textbf{首次出现时写出全称}, 后附缩略词, 并用括号括起; 之后直接用缩略词, 不
           再写全称, 如 American Institute of Physics (AIP).
@@ -224,8 +248,8 @@
               半角标点符号应如英文一般, 在逗号, 句号, 分号等后方插入一个空格;
               在引号, 括号外侧各插入一个空格;
               连续出现的标点符号之间的多余空格则应删除.
-              但是, \textsf{xeCJK} 宏包基本上自动为你在最终的 PDF 文稿中完成了这些事情.
-              此外, 如果你觉得半角符号配中文太丑, 请参见 \texttt{README.md} 中介绍的标点选项)}
+              但是, \pkg{xeCJK} 宏包基本上自动为你在最终的 PDF 文稿中完成了这些事情.
+              此外, 如果你觉得半角符号配中文太丑, 请参见 \file{README.md} 中介绍的标点选项)}
     \item 公式、图和表要分别用阿拉伯数字编列序号. \note{(这点 \LaTeX 可以为你代劳)}
           公式和图表要达到可发表的质量.
     \item 凡不是自己独立思考得到的内容都应该引参考文献.
@@ -234,7 +258,7 @@
           对简单一些的问题才鼓励独立思考.
           只能引用正式出版物, 不能引用他人实验报告.
     \item 模板中的未尽事项可以参考 AIP Style Manual 4th-edition (可从课程网站下载).
-          \note{(也可参考 \textsf{revtex} 的文档)}
+          \note{(也可参考 \pkg[revtex]{revtex4-2} 的文档)}
     \item 较长的推导和说明可以作为附件提交, 不占用报告篇幅.
     \item 思考题不是报告的组成部分.
           应另起一页附在报告的最后. \note{(比如作为附录)}
@@ -263,12 +287,12 @@
         英式连续嵌套引号 & \verb|`{}``| & `{}`` & \verb|'''|   & ''' \\
     \end{tabular}
 \end{center}
-注意其中 \texttt{\{\}} 起到的分组作用.
+注意其中 \code{\{\}} 起到的分组作用.
 
-此外, 如果想使用全角符号同时想使用实心点格式的句号, 可以使用 \texttt{quanjiao} 选项.
+此外, 如果想使用全角符号同时想使用实心点格式的句号, 可以使用 \code{quanjiao} 选项.
 源文档中的 ``。'' 会被自动替换成 ``．''.
 这时, 也就可以风格统一地直接使用中文输入法给出的引号 ``“”‘’'' 而不用管前面提到的映射了.
-具体请参见 \texttt{README.md} 中介绍的标点选项.
+具体请参见 \file{README.md} 中介绍的标点选项.
 
 \note{其实“和``以及”和''分别是同一个 Unicode 字符, 只是被分配了不同的字体.}
 

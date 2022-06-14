@@ -198,7 +198,7 @@
 \RequirePackage[all]{hypcap}
 % PDF 书签摘要名字
 \newcommand{\bookmarkabstractname}{摘要}
-\patchcmd{\phantomsection}{%
+\patchcmd{\addcontents@abstract}{%
     \abstractname%
   }{%
     \bookmarkabstractname%
