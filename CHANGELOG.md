@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## 2022-06-16, [v2.1.1]
 
 ### Added
 
@@ -96,7 +96,8 @@
 
 `*.cls` 初版本.
 
-[Unreleased]: https://github.com/CastleStar14654/PKUMpLtX/compare/v2.1...HEAD
+[Unreleased]: https://github.com/CastleStar14654/PKUMpLtX/compare/v2.1.1...HEAD
+[v2.1.1]:     https://github.com/CastleStar14654/PKUMpLtX/compare/v2.1...v2.1.1
 [v2.1]:     https://github.com/CastleStar14654/PKUMpLtX/compare/v2.0.2...v2.1
 [v2.0.2]:     https://github.com/CastleStar14654/PKUMpLtX/compare/v2.0.1...v2.0.2
 [v2.0.1]:     https://github.com/CastleStar14654/PKUMpLtX/compare/v.2.0...v2.0.1
