@@ -1,5 +1,15 @@
 # Changelog
 
+## [Unreleased]
+
+### Changed
+
+1. 一些格式化.
+
+### Fixed
+
+1. 去除示例文档中英文破折号 en-dash 两侧空格, 以符合大多数格式规范的要求.
+
 ## 2022-06-16, [v2.1.1]
 
 ### Added

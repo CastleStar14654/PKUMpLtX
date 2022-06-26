@@ -43,11 +43,11 @@
 % 下面的 \date 的参数是为了自动输出正确版本号, 正式报告请替换为上面的两种 \date 之一
 \date{\releasedate}
 \begin{abstract}
-    此部分为摘要.
-    200--300字, 说明用什么方法做了什么事, 由此得到什么结果和结论, 有何意义.
-    摘要中不用缩略词, 不用第一人称.
-    \note{本文档为对 \href{https://github.com/CastleStar14654/PKUMpLtX}{\pkg*{PKUMpLtX}} 的使用示例, 灰色部分为额外针对 \LaTeX{} 模板使用的说明.
-        也请注意查看源文档 \file{template.tex} 中的注释.}
+  此部分为摘要.
+  200--300字, 说明用什么方法做了什么事, 由此得到什么结果和结论, 有何意义.
+  摘要中不用缩略词, 不用第一人称.
+  \note{本文档为对 \href{https://github.com/CastleStar14654/PKUMpLtX}{\pkg*{PKUMpLtX}} 的使用示例, 灰色部分为额外针对 \LaTeX{} 模板使用的说明.
+    也请注意查看源文档 \file{template.tex} 中的注释.}
 \end{abstract}
 \keywords{关键词1, 关键词2, 共2--4个}
 
@@ -66,28 +66,28 @@
 引言撰写可以参考实验讲义和资料, 可以概括复述, 但不能抄.
 \note{这里是一个对实验教材 \cite{jindaishiyan} 的引用示例.}
 \note{注意在 \cs{cite} 命令前后适当添加空格.
-    可以连续引用.
-    引用标记要出现在标点之前 \cite{GBT7714,pr}.
-    引用处理使用 \textsc{Bib\TeX};
-    对于外文期刊, \file{*.bib} 格式的引用数据很容易从出版商获得;
-    \href{https://scholar.google.com}{Google 学术}和\href{https://xueshu.baidu.com}{百度学术}等文献搜索引擎也提供以\file{*.bib} 格式导出的功能.
-    这里是对首次探测到引力波的报道的引用 \cite{PhysRevLett.116.061102}.}
+  可以连续引用.
+  引用标记要出现在标点之前 \cite{GBT7714,pr}.
+  引用处理使用 \textsc{Bib\TeX};
+  对于外文期刊, \file{*.bib} 格式的引用数据很容易从出版商获得;
+  \href{https://scholar.google.com}{Google 学术}和\href{https://xueshu.baidu.com}{百度学术}等文献搜索引擎也提供以\file{*.bib} 格式导出的功能.
+  这里是对首次探测到引力波的报道的引用 \cite{PhysRevLett.116.061102}.}
 
 \section{理论}\label{sec:theory}
 
 可选, 概括本实验必须的理论.
 也可以适当地给出必要的公式, 公式应编号.
 \note{自然对数的底和虚数单位国标 \cite{GBT3102.11} 和 ISO \cite{ISO80000-2} 都推荐为正体 (虽然国际学界并不怎么实行这点), 本模板提供了 \cs{ii}, \cs{ee}, \cs{jj} 作为简写, 如
-    \begin{equation}\label{eq:1}
-        \ee^{\ii\pi}+1=0.
-    \end{equation}
-    注意公式应作为句子的一部分在末尾给出必要的标点符号.
-    上式可以交叉引用为\autoref{eq:1}.}
+  \begin{equation}\label{eq:1}
+    \ee^{\ii\pi}+1=0.
+  \end{equation}
+  注意公式应作为句子的一部分在末尾给出必要的标点符号.
+  上式可以交叉引用为\autoref{eq:1}.}
 
 \note{此外, 摄氏度和度在2020年初后已可在 \LaTeX{} 中的非数学模式直接打出 \cite{fntguide},
-    比如 \cs{textdegree} (\textdegree) 和 \cs{textcelsius} (\textcelsius, 虽然国际计量局 \cite{si} 和 Unicode 联盟 \cite{unicode} 都更推荐使用 \code{\textbackslash{}textdegree\{\}C} 的写法, 写成 \textdegree{}C).
-    再比如, \cs{textmu} (\textmu) 可以给出微米需要的正体词头符号.
-    你也可以使用 \pkg{siunitx} 宏包 (参见 \file{README.md}) 来帮助你管理单位格式.}
+  比如 \cs{textdegree} (\textdegree) 和 \cs{textcelsius} (\textcelsius, 虽然国际计量局 \cite{si} 和 Unicode 联盟 \cite{unicode} 都更推荐使用 \code{\textbackslash{}textdegree\{\}C} 的写法, 写成 \textdegree{}C).
+  再比如, \cs{textmu} (\textmu) 可以给出微米需要的正体词头符号.
+  你也可以使用 \pkg{siunitx} 宏包 (参见 \file{README.md}) 来帮助你管理单位格式.}
 
 \section{实验装置}
 在此部分需要成段介绍实验方法和条件 (不是罗列操作步骤), 交待清楚到别人能重复你的实验结果的程度.
@@ -97,17 +97,17 @@
 例如, 如下同学的示意图\autoref{fig:instruments} 非常清晰, 值得借鉴 (各关键部件也可标在图中).
 
 \begin{figure}
-    \centering
-    \includegraphics[width=0.85\linewidth]{fig/instruments.png}
-    \caption{这个例子展示了如何插入图片以及加说明文字.
-        \note{推荐使用相对大小插入图片, 比如这里是 0.8 倍当前区域文字宽度 (\cs{linewidth}).
-            推荐对实验装置图和数据图使用矢量图插入}}
-    \label{fig:instruments}
+  \centering
+  \includegraphics[width=0.85\linewidth]{fig/instruments.png}
+  \caption{这个例子展示了如何插入图片以及加说明文字.
+    \note{推荐使用相对大小插入图片, 比如这里是 0.8 倍当前区域文字宽度 (\cs{linewidth}).
+      推荐对实验装置图和数据图使用矢量图插入}}
+  \label{fig:instruments}
 \end{figure}
 
 \note{这里使用了 \cs{autoref} 命令来自动给出带类型的交叉引用, 注意在命令前后适当使用空格以给出最好的显示效果.
-    小节, 表格, 公式等都可如此引用, 如: \autoref{sec:theory}, \autoref{ssec:table}, \autoref{sssec:table}, \autoref{eq:1}, \autoref{tab:table_eg}, \autoref{app:exercise}, \autopageref{tab:table_eg}.
-    交叉引用的标签尽量取得有意义.}
+  小节, 表格, 公式等都可如此引用, 如: \autoref{sec:theory}, \autoref{ssec:table}, \autoref{sssec:table}, \autoref{eq:1}, \autoref{tab:table_eg}, \autoref{app:exercise}, \autopageref{tab:table_eg}.
+  交叉引用的标签尽量取得有意义.}
 
 实验仪器和方法不是像普物实验报告那样将所有实验器材列出, 而是要用介绍功用的方式成段给出.
 实验条件不仅是指直接影响实验结果的实验参量, 而且还包括影响实验质量和可靠性的因素, 如室温、空气湿度、基真空、原材料纯度等.
@@ -129,32 +129,32 @@
 例表为\autoref{tab:table_eg}.
 
 \begin{table}
-    \caption{表格示例%
-        \footnote{表格标题要简明扼要; 注意使用 \pkg[revtex]{revtex4-2} 提供的 \env{ruledtabular} 环境生成首尾双横线的表格.
-            表格中的脚注会自动加在表尾.
-            为方便, 提供了 \cs{mc} 作为 \cs{multicolumn} 的简写.
-            \href{https://www.tablesgenerator.com}{Tables Generator 网站}可以方便地生成 \LaTeX 表格.}}
-    \label{tab:table_eg}
-    \begin{ruledtabular}% ruledtabular 环境自动生成首尾双横线, 并调整宽度至占满全行
-        \begin{tabular}{cd{4.2}lr}
-            % d{a.b} 能使该列中的数据按小数点对齐, 前方留 a 个字符, 后方留 b 个字符
-            % 已将 multicolumn 简写为 mc
-            居中    & \mc{1}{c}{数值 %
-                \footnote{``数值'' 列使用了 \code{d} 列格式来按小数点位置对齐. 记得将 \code{d} 列的列标题单独设为居中.}
-            }     & 靠左           & 靠右 \\
-            \colrule% 中间横线
-            a     & 0.12         & a     & a \\
-            bbb   & -100         & bbb   & bbb \\
-            ccccc & 50.8         & ccccc & ccccc
-        \end{tabular}
-    \end{ruledtabular}
+  \caption{表格示例%
+    \footnote{表格标题要简明扼要; 注意使用 \pkg[revtex]{revtex4-2} 提供的 \env{ruledtabular} 环境生成首尾双横线的表格.
+      表格中的脚注会自动加在表尾.
+      为方便, 提供了 \cs{mc} 作为 \cs{multicolumn} 的简写.
+      \href{https://www.tablesgenerator.com}{Tables Generator 网站}可以方便地生成 \LaTeX 表格.}}
+  \label{tab:table_eg}
+  \begin{ruledtabular}% ruledtabular 环境自动生成首尾双横线, 并调整宽度至占满全行
+    \begin{tabular}{cd{4.2}lr}
+      % d{a.b} 能使该列中的数据按小数点对齐, 前方留 a 个字符, 后方留 b 个字符
+      % 已将 multicolumn 简写为 mc
+      居中    & \mc{1}{c}{数值 %
+        \footnote{``数值'' 列使用了 \code{d} 列格式来按小数点位置对齐. 记得将 \code{d} 列的列标题单独设为居中.}
+      }     & 靠左           & 靠右 \\
+      \colrule% 中间横线
+      a     & 0.12         & a     & a \\
+      bbb   & -100         & bbb   & bbb \\
+      ccccc & 50.8         & ccccc & ccccc
+    \end{tabular}
+  \end{ruledtabular}
 \end{table}
 
 从\autoref{tab:table_eg} 可以看出, 对表中各项的注释应作为表的一部分放在表后, 而不是页脚或文尾.
 \note{在表格中使用 \cs{footnote} 命令时 \LaTeX 会自动将注释放在表尾.
-    但正文中的注释按照 AIP 的要求 (以及 \pkg[revtex]{revtex4-2} 的实现) 是会和各引用项共同编号并作为参考文献列表的一部分的.
-    因此, 只要你在正文使用了 \cs{footnote}, 即使你没有引用任何文献 (这一般不太可能), 也需要用 B\textsc{ib}\TeX 处理.
-    这里是一个尾注的例子 \footnote{这里是一个尾注的例子}.}
+  但正文中的注释按照 AIP 的要求 (以及 \pkg[revtex]{revtex4-2} 的实现) 是会和各引用项共同编号并作为参考文献列表的一部分的.
+  因此, 只要你在正文使用了 \cs{footnote}, 即使你没有引用任何文献 (这一般不太可能), 也需要用 B\textsc{ib}\TeX 处理.
+  这里是一个尾注的例子 \footnote{这里是一个尾注的例子}.}
 
 当原始数据和处理过的数据常需要出现在同一表中时, 用软件来处理会非常方便.
 但出现在实验报告中的表应具有上面给出的例子的格式.
@@ -168,20 +168,20 @@
 课程也鼓励大家使用 Python 语言编程作图.
 逐点测量得到的函数关系要同时用表格和图给出.
 \note{数据点过多可以将数据放到附录.
-    这里 ``逐点测量得到的函数关系'' 还是要自己把握一下, 像那种几千个数据点的能谱当然就没必要放原始数据表了.}
+  这里 ``逐点测量得到的函数关系'' 还是要自己把握一下, 像那种几千个数据点的能谱当然就没必要放原始数据表了.}
 \textbf{需要作比较的多条曲线要画在同一图上.}
 为避免读者在图表和正文间反复跳跃阅读, 正文叙述应紧邻图表, 正文中也要对图表作必要的说明.
 
 \begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{fig/figsample.pdf}
-    \caption{这是数据图的例子.
-        \note{在图的 \cs{caption} 中应简要说明图中表达的内容, 并对各种符号、线型、颜色的意义做出说明.
-            如果有多格数据图, 应清晰地分别做出解释说明.
-            图中的关键性文字 (比如轴名和图例) 的大小最好能和说明文字中的文字大小相当.
-            关于坐标轴名和单位的标法, 可以参看\href{https://journals.aps.org/authors/axis-labels-and-scales-on-graphs-h18}{美国物理学会的说明}.
-            本图是用脚本 \file{figgen.py} 生成的}}
-    \label{fig:data}
+  \centering
+  \includegraphics[width=0.8\textwidth]{fig/figsample.pdf}
+  \caption{这是数据图的例子.
+    \note{在图的 \cs{caption} 中应简要说明图中表达的内容, 并对各种符号、线型、颜色的意义做出说明.
+      如果有多格数据图, 应清晰地分别做出解释说明.
+      图中的关键性文字 (比如轴名和图例) 的大小最好能和说明文字中的文字大小相当.
+      关于坐标轴名和单位的标法, 可以参看\href{https://journals.aps.org/authors/axis-labels-and-scales-on-graphs-h18}{美国物理学会的说明}.
+      本图是用脚本 \file{figgen.py} 生成的}}
+  \label{fig:data}
 \end{figure}
 
 \autoref{fig:data} 是一张例图.
@@ -207,8 +207,8 @@
 此部分给出的内容要比摘要中的全面, 用词要更准确．
 
 \begin{acknowledgments}
-    感谢对实验和报告有具体重要帮助的, 又没被列为作者的人.
-    \note{撰写致谢时请使用 \env{acknowledgments} 环境.}
+  感谢对实验和报告有具体重要帮助的, 又没被列为作者的人.
+  \note{撰写致谢时请使用 \env{acknowledgments} 环境.}
 \end{acknowledgments}
 
 % bibliography 的参数是你的 *.bib 文件去掉后缀名后的部分
@@ -237,43 +237,43 @@
 \subsection*{报告写作的一般事项}
 
 \begin{enumerate}
-    \item 课程实验报告应假定读者既不是已知全部实验细节的指导教师, 也不是缺少专业知识的公众, 而是同领域的实验研究者, 或审稿人.
-          不能要求读者要在读过课程讲义后才能读懂课程实验报告.
-    \item 文本和物理量单位用正体, 物理变量符号用斜体, 矢量矩阵符号用黑斜体.
-          \note{(\pkg{physics} 宏包提供了大量的方便的物理中常用符号的排版工具, 请参考其文档使用)}
-    \item 使用国际标准的缩略词, 符号和法定计量单位时应全文一致, 正文中的缩略
-          词在\textbf{首次出现时写出全称}, 后附缩略词, 并用括号括起; 之后直接用缩略词, 不
-          再写全称, 如 American Institute of Physics (AIP).
-    \item 全文标点符号除 ``顿号'' 外, 其他用英文半角标点符号.
-          \note{(推荐的格式中, 英文单词和数字应与汉字之间插入一个空格;
-              半角标点符号应如英文一般, 在逗号, 句号, 分号等后方插入一个空格;
-              在引号, 括号外侧各插入一个空格;
-              连续出现的标点符号之间的多余空格则应删除.
-              但是, \pkg{xeCJK} 宏包基本上自动为你在最终的 PDF 文稿中完成了这些事情.
-              此外, 如果你觉得半角符号配中文太丑, 请参见 \file{README.md} 中介绍的标点选项)}
-    \item 公式、图和表要分别用阿拉伯数字编列序号. \note{(这点 \LaTeX 可以为你代劳)}
-          公式和图表要达到可发表的质量.
-    \item 凡不是自己独立思考得到的内容都应该引参考文献.
-          不能大段引用同一参考文献.
-          对复杂问题, 应该优先考虑引用参考文献得到结果.
-          对简单一些的问题才鼓励独立思考.
-          只能引用正式出版物, 不能引用他人实验报告.
-    \item 模板中的未尽事项可以参考 AIP Style Manual 4th-edition (可从课程网站下载).
-          \note{(也可参考 \pkg[revtex]{revtex4-2} 的文档)}
-    \item 较长的推导和说明可以作为附件提交, 不占用报告篇幅.
-    \item 思考题不是报告的组成部分.
-          应另起一页附在报告的最后. \note{(比如作为附录)}
+  \item 课程实验报告应假定读者既不是已知全部实验细节的指导教师, 也不是缺少专业知识的公众, 而是同领域的实验研究者, 或审稿人.
+        不能要求读者要在读过课程讲义后才能读懂课程实验报告.
+  \item 文本和物理量单位用正体, 物理变量符号用斜体, 矢量矩阵符号用黑斜体.
+        \note{(\pkg{physics} 宏包提供了大量的方便的物理中常用符号的排版工具, 请参考其文档使用)}
+  \item 使用国际标准的缩略词, 符号和法定计量单位时应全文一致, 正文中的缩略
+        词在\textbf{首次出现时写出全称}, 后附缩略词, 并用括号括起; 之后直接用缩略词, 不
+        再写全称, 如 American Institute of Physics (AIP).
+  \item 全文标点符号除 ``顿号'' 外, 其他用英文半角标点符号.
+        \note{(推荐的格式中, 英文单词和数字应与汉字之间插入一个空格;
+          半角标点符号应如英文一般, 在逗号, 句号, 分号等后方插入一个空格;
+          在引号, 括号外侧各插入一个空格;
+          连续出现的标点符号之间的多余空格则应删除.
+          但是, \pkg{xeCJK} 宏包基本上自动为你在最终的 PDF 文稿中完成了这些事情.
+          此外, 如果你觉得半角符号配中文太丑, 请参见 \file{README.md} 中介绍的标点选项)}
+  \item 公式、图和表要分别用阿拉伯数字编列序号. \note{(这点 \LaTeX 可以为你代劳)}
+        公式和图表要达到可发表的质量.
+  \item 凡不是自己独立思考得到的内容都应该引参考文献.
+        不能大段引用同一参考文献.
+        对复杂问题, 应该优先考虑引用参考文献得到结果.
+        对简单一些的问题才鼓励独立思考.
+        只能引用正式出版物, 不能引用他人实验报告.
+  \item 模板中的未尽事项可以参考 AIP Style Manual 4th-edition (可从课程网站下载).
+        \note{(也可参考 \pkg[revtex]{revtex4-2} 的文档)}
+  \item 较长的推导和说明可以作为附件提交, 不占用报告篇幅.
+  \item 思考题不是报告的组成部分.
+        应另起一页附在报告的最后. \note{(比如作为附录)}
 \end{enumerate}
 
 \section{对 \LaTeX{} 中标点输入的额外说明}
 \LaTeX 中对 dash 有所区分,
 \begin{center}
-    \begin{tabular}{c@{\quad}c@{\ $\rightarrow$\ }c}
-        连字符 hyphen    & \verb|co-operate|     & co-operate \\
-        连接号 en-dash   & \verb|14--19|         & 14--19 \\
-        英文破折号 em-dash & \verb|Yes --- or no?| & Yes --- or no? \\
-        减号            & \verb|$-1$|           & $-1$ \\
-    \end{tabular}
+  \begin{tabular}{c@{\quad}c@{\ $\rightarrow$\ }c}
+    连字符 hyphen    & \verb|co-operate|     & co-operate \\
+    连接号 en-dash   & \verb|14--19|         & 14--19 \\
+    英文破折号 em-dash & \verb|Yes---or no?| & Yes---or no? \\
+    减号            & \verb|$-1$|           & $-1$ \\
+  \end{tabular}
 \end{center}
 中文破折号 (——) 就按一般习惯的用输入法输入即可.
 \note{其实中文破折号就是两个连着的 em-dash, 但两种输入方式使他们输出字体不同.}
@@ -281,12 +281,12 @@
 \LaTeX 中半角引号使用如下映射进行输入.
 左引号的符号为 \textsf{Esc} 键下方的锐音符.
 \begin{center}
-    \begin{tabular}{c@{\quad}c@{\ $\rightarrow$\ }c@{\quad}c@{\ $\rightarrow$\ }c}
-        单引号      & \verb|`|     & `     & \verb|'|     & ' \\
-        双引号      & \verb|``|    & ``    & \verb|''|    & '' \\
-        美式连续嵌套引号 & \verb|```|   & ```   & \verb|'{}''| & '{}'' \\
-        英式连续嵌套引号 & \verb|`{}``| & `{}`` & \verb|'''|   & ''' \\
-    \end{tabular}
+  \begin{tabular}{c@{\quad}c@{\ $\rightarrow$\ }c@{\quad}c@{\ $\rightarrow$\ }c}
+    单引号      & \verb|`|     & `     & \verb|'|     & ' \\
+    双引号      & \verb|``|    & ``    & \verb|''|    & '' \\
+    美式连续嵌套引号 & \verb|```|   & ```   & \verb|'{}''| & '{}'' \\
+    英式连续嵌套引号 & \verb|`{}``| & `{}`` & \verb|'''|   & ''' \\
+  \end{tabular}
 \end{center}
 注意其中 \code{\{\}} 起到的分组作用.
 
@@ -305,9 +305,9 @@
 
 下面分别展示衬线, 无衬线和等宽中文字体效果, 便于检查基线高度等问题.
 \begin{center}
-    \textrm{\testline}\\
-    \textsf{\testline}\\
-    \texttt{\testline}
+  \textrm{\testline}\\
+  \textsf{\testline}\\
+  \texttt{\testline}
 \end{center}
 
 \end{document}

@@ -21,7 +21,7 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
   - [编译](#编译)
   - [字体选项](#字体选项)
     - [关于中文字体的进一步说明](#关于中文字体的进一步说明)
-    - [英文字体与 [`unicode-math`]](#英文字体与-unicode-math)
+    - [英文字体与 `unicode-math`](#英文字体与-unicode-math)
   - [标点选项](#标点选项)
   - [新定义的命令列表](#新定义的命令列表)
 - [自动调用的宏包](#自动调用的宏包)
@@ -136,7 +136,7 @@ xelatex template
 
 [`template.tex`] 在附录给了一段供检查字体效果的排版内容.
 
-#### 英文字体与 [`unicode-math`]
+#### 英文字体与 `unicode-math`
 
 本模板未对英文字体做设置, 输出的为 XeTeX 下默认的 Latin Modern 系列字体.
 如有修改英文字体需求, 请自行使用 [`fontspec`] 宏包提供的命令修改 ([`xeCJK`] 自动调用了此宏包).
