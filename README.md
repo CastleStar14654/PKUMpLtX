@@ -11,7 +11,8 @@ This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 Inte
 License. To view a copy of this license, visit [`LICENSE`]
 or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
-希望本模板能帮助同学们专注报告内容, 减少对格式等的不必要的时间消耗.
+希望本模板能帮助同学们专注报告内容, 减少在格式等问题上不必要的时间消耗.
+(虽然使用 $\mathrm{\LaTeX{}}$ 会带来另外一些细节问题)
 本模板不保证可靠性.
 
 - [下载](#下载)
