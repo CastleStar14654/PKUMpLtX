@@ -38,6 +38,7 @@
 
 % ===== Options =====
 \DeclareBoolOption{quanjiao}
+\DeclareBoolOption{physics}
 \DeclareStringOption[default]{font}
 \ProcessKeyvalOptions*\relax
 
@@ -144,10 +145,17 @@
 % ----- Math & physics -----
 % [外部宏包] 国际单位制与数值支持
 \RequirePackage[unit-mode=text]{siunitx}
-% [外部宏包] 提供很多物理符号和微积分符号
-\RequirePackage{physics}
-% 处理 siunitx 和 physics 对 qty 重名: 前者变成 \qnty
-\AtBeginDocument{\NewCommandCopy\qnty\SI}
+\ifmpltx@physics
+  \AtBeginDocument{
+    % [外部宏包] 提供很多物理符号和微积分符号; 默认不导入; 需打开 `physics` 选项
+    \NewCommandCopy{\mpltx@SIqty}{\qty}
+    \RequirePackage{physics}
+    % 处理 siunitx 和 physics 对 qty 重名: 后者变成 \qtyp
+    \NewCommandCopy{\qtyp}{\quantity}
+    \RenewCommandCopy{\qty}{\mpltx@SIqty}
+    \let\mpltx@SIqty\@undefined
+  }
+\fi
 % 定义虚数单位简写
 \newcommand{\jj}{\mathrm{j}}
 \newcommand{\ii}{\mathrm{i}}

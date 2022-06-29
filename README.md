@@ -24,6 +24,7 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
     - [关于中文字体的进一步说明](#关于中文字体的进一步说明)
     - [英文字体与 `unicode-math`](#英文字体与-unicode-math)
   - [标点选项](#标点选项)
+  - [`physics` 宏包导入选项](#physics-宏包导入选项)
   - [新定义的命令列表](#新定义的命令列表)
 - [自动调用的宏包](#自动调用的宏包)
   - [其他需要注意的外部宏包](#其他需要注意的外部宏包)
@@ -142,7 +143,7 @@ xelatex template
 本模板未对英文字体做设置, 输出的为 XeTeX 下默认的 Latin Modern 系列字体.
 如有修改英文字体需求, 请自行使用 [`fontspec`] 宏包提供的命令修改 ([`xeCJK`] 自动调用了此宏包).
 
-如有修改数学字体的需求, 请自行调用 [`unicode-math`] 并下载相应的数学 OTF 字体宏包.
+如有修改数学字体的需求, 请自行使用 [`fontspec`] 相关功能或调用 [`unicode-math`] 并下载相应的数学 OTF 字体宏包.
 
 ### 标点选项
 
@@ -155,6 +156,14 @@ xelatex template
   + 如果没有, 使用 `quanjiao` 选项, 在源文件中直接用 "。" 做句号.
     [`xeCJK`] 会自动帮你做替换.
 
+### `physics` 宏包导入选项
+
+[`physics`] 提供了众多方便的物理符号与公式输入, 如导数符号命令 `\dv{f}{x}`, 自动调整大小的括号 `\qtyp()` 等.
+**但本宏包已十年没有维护, 故默认没有导入**, 如需要请使用 `physics` 文档类选项, 而非自行导入!
+此宏包定义的 "自动调整括号大小" 命令 `\qty` 与 `siunitx` 的 "物理量" 命令重名.
+所以, 本模板导入时将该宏包的命令**重命名**为 `\qtyp`.
+具体其他功能请参考其文档.
+
 ### 新定义的命令列表
 
 + `\emailphone[<pretext>]{<email>}{<phone>}`: 在当前位置插入脚注, 内容为 `<pretext><email>; <phone>` 且电子邮件地址转为链接.
@@ -166,12 +175,7 @@ xelatex template
 模板已提前调用了很多为撰写报告提供便利的宏包, 请前往 [`mpltx.cls`] 查看, 其中含有解释其功能的注释.
 一些特殊说明如下:
 
-+ [`physics`] 提供了众多方便的物理符号与公式输入,
-如导数符号命令 `\dv{f}{x}`, 自动调整大小的括号 `\qty()` 等.
-具体请参考其文档.
-+ [`siunitx`] 用于便利地打出格式良好的物理量的值和单位, 如 `\qnty{299792.458}{\km\per\s}`， `$g=\qnty{9.801}{m.s^{-2}}$`.
-注意, 此宏包定义的 "物理量" 命令 `\qty` 与 `physics` 的 "自动调整括号大小" 命令重名.
-所以, 本模板将本宏包的命令**重命名**为 `\qnty`.
++ [`siunitx`] 用于便利地打出格式良好的物理量的值和单位, 如 `\qty{299792.458}{\km\per\s}`， `$g=\qty{9.801}{m.s^{-2}}$`.
 + [`dcolumn`] $\mathrm{\LaTeX{}}2\epsilon$ 基础包的一个, 提供按小数点对齐的表格列格式.
 `siunitx` 其实也提供了类似功能, 感兴趣的可以参考两者文档.
 
@@ -180,6 +184,7 @@ xelatex template
 + [`caption`] 存在与本模板的基础 `revtex4-2` 不兼容的情况, 请勿使用.
 + [`subfig`] 默认会自动调用 `caption`.
 调用时请使用选项 `caption=false`.
++ [`fixdif`] 宏包提供了正体微分符号命令, 如有需求可以调用.
 
 ## 反馈
 
@@ -210,3 +215,4 @@ xelatex template
 [`caption`]: https://www.ctan.org/pkg/caption
 [`subfig`]: https://www.ctan.org/pkg/subfig
 [`dcolumn`]: https://www.ctan.org/pkg/dcolumn
+[`fixdif`]: https://www.ctan.org/pkg/fixdif

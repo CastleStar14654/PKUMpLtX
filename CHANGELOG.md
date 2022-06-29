@@ -5,6 +5,11 @@
 ### Changed
 
 1. 一些格式化.
+2. 不再默认导入 `physics`, 而是改为可选项; `\qty` 恢复为 `siunitx` 的命令, `physics` 的命名为 `\qtyp`.
+
+### Added
+
+1. 新提到了 `fixdif` 宏包.
 
 ### Fixed
 
