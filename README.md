@@ -2,9 +2,9 @@
 
 *A LaTeX document class for 'Modern Physics Laboratory' in PKU based on [`revtex4-2`]*
 
-+ Copyright (C) 2013. Modern Phys. Lab, School of Phys., Peking Univ.
-+ Copyright (C) Sun Sibai <niasw_at_pku.edu.cn>
-+ Copyright (C) Cao Chuanwu <>
++ Copyright (C) 2013--2022. Modern Phys. Lab, School of Phys., Peking Univ.
++ Copyright (C) 2013--2014. Sun Sibai <niasw_at_pku.edu.cn>
++ Copyright (C) 2013. Cao Chuanwu <>
 + Copyright (C) 2021--2022. Lin Xuchen <linxc_at_pku.edu.cn>
 
 This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International

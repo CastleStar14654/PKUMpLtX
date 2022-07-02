@@ -105,7 +105,8 @@
 % 参考文献格式
 \bibliographystyle{apsrev4-2}
 % 让 email 加上手机号
-\newcommand*\emailphone[3][]{\begingroup\sanitize@url\mpltx@emaildouble{#1}{#2}{#3}}%
+\NewDocumentCommand{\emailphone}{O{} m m}{%
+  \begingroup\sanitize@url\mpltx@emaildouble{#1}{#2}{#3}}
 \def\mpltx@emaildouble#1#2#3{%
  \endgroup
  \@AF@join{#1\href{mailto:#2}{#2}; #3}%
