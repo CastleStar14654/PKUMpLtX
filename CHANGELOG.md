@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## 2022-08-27, [v2.1.2]
 
 ### Changed
 
@@ -13,7 +13,7 @@
 
 ### Fixed
 
-1. 去除示例文档中英文破折号 en-dash 两侧空格, 以符合大多数格式规范的要求.
+1. 去除示例文档中的英文破折号 em-dash 两侧空格, 以符合大多数格式规范的要求.
 
 ## 2022-06-16, [v2.1.1]
 
@@ -111,7 +111,8 @@
 
 `*.cls` 初版本.
 
-[Unreleased]: https://github.com/CastleStar14654/PKUMpLtX/compare/v2.1.1...HEAD
+[Unreleased]: https://github.com/CastleStar14654/PKUMpLtX/compare/v2.1.2...HEAD
+[v2.1.2]:     https://github.com/CastleStar14654/PKUMpLtX/compare/v2.1.1...v2.1.2
 [v2.1.1]:     https://github.com/CastleStar14654/PKUMpLtX/compare/v2.1...v2.1.1
 [v2.1]:     https://github.com/CastleStar14654/PKUMpLtX/compare/v2.0.2...v2.1
 [v2.0.2]:     https://github.com/CastleStar14654/PKUMpLtX/compare/v2.0.1...v2.0.2
