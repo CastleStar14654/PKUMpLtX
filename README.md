@@ -97,36 +97,48 @@ xelatex template
 ### 字体选项
 
 `font={`**`default`**`|noto|notofandol|windows|macos|diy}`
-+ `default`: 默认选项, 使用 [`xeCJK`] 默认的开源 Fandol 字体.
-  需要安装 [`fandol`] 宏包. 如果你使用 Overleaf, 用这个选项或者下方的 `notofandol` 都可以.
++ `default`: 默认选项, 使用 [`xeCJK`] 默认配置. 小白友好. 
++ `fandol`: 作者搭配的使用 [`fandol`] 的字体配置, 与默认的配法不同. 需要事先安装 [`fandol`] 宏包, $\mathrm{MiK\TeX}$ 在这个选项下并不会自动下载 `fandol`.
 + `noto`: 使用 Noto CJK SC 系列的宋体与黑体. 这是一款优秀的开源中文字体, 可在[其主页](https://github.com/googlefonts/noto-cjk/releases)下载最新版的 Noto CJK Serif SC (即思源宋体) 和 Noto CJK Sans SC (即思源黑体),
   或者安装 [`notocjksc`] 宏包 (但宏包的字体版本是 18 年的).
   但仿宋体和楷体 Noto 未提供, 故将自动使用 Windows 或 macOS 自带的相应字体. **Linux 用户很可能会因为没有相应的商业仿宋体和楷体字体而出错**, 请改用下方的 `notofandol`, 或改用 `diy` 自行使用 `\setCJK*font` 等命令配置.
   + `notofandol`: 用 Fandol 的仿宋体和楷体搭配 Noto 系列的宋体与黑体. **Fandol 和 Noto 的基线不齐**.
 + `windows`: 使用 Windows 系统自带字体 (都使用华文系列; 除了黑体为等线).
 + `macos`: 使用 macOS 系统自带字体 (黑体为苹方). **苹方和其他字体的基线不对齐. 但 macOS 的所有黑体类字体都有这个问题.**
-+ `diy`: 自己使用 `\setCJK*font` 命令配置.
++ `diy`: 历史遗留选项, 与 `default` 完全一致.
+
+使用以上任意选项后, 都仍可用 `\setCJK*font` 自行调整字体.
 
 比如, Windows 用户就可以这样子调用
 ```latex
 \documentclass[font=windows]{mpltx}
 ```
+同时, 在任何系统上这应该都可以编译
+```latex
+\documentclass{mpltx}
+```
 
-以上各选项的字体配置风格如下 (与 `xeCJK` 默认的配置方式有所不同)
+以上各选项 (`default` 除外) 的字体配置风格如下 (与 `xeCJK` 默认的配置方式有所不同)
 |         | Roman  | Sans Serif | Monospace |
 | :-----: | :----: | :--------: | :-------: |
 | Upright | 宋体类 |   黑体类   |  仿宋类   |
 | Italic  | 仿宋类 |   楷体类   |  楷体类   |
 
+`default` 的字体配置则为
+|         | Roman  | Sans Serif | Monospace |
+| :-----: | :----: | :--------: | :-------: |
+| Upright | 宋体类 |   黑体类   |  仿宋类   |
+| Italic  | 楷体类 |    没有    |   没有    |
+
 各平台可以支持的字体选项如下 (叹号表示需要安装特定的字体宏包或开源字体)
 |    选项    | Windows | macOS | Linux | Overleaf |
 | :--------: | :-----: | :---: | :---: | :------: |
-|  default   |   ✓!    |  ✓!   |  ✓!   |    ✓     |
+|  default   |    ✓    |   ✓   |   ✓   |    ✓     |
+|   fandol   |   ✓!    |  ✓!   |  ✓!   |    ✓     |
 |    noto    |   ✓!    |  ✓!   |   ✗   |    ✗     |
 | notofandol |   ✓!    |  ✓!   |  ✓!   |    ✓     |
 |  windows   |    ✓    |   ✗   |   ✗   |    ✗     |
 |   macos    |    ✗    |   ✓   |   ✗   |    ✗     |
-|    diy     |    ✓    |   ✓   |   ✓   |    ✓     |
 
 #### 关于中文字体的进一步说明
 

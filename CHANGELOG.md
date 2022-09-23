@@ -1,11 +1,23 @@
 # Changelog
 
+## [Unreleased]
+
+### Changed
+
+1. 改用 `\IfPackageLoadedTF`.
+2. 字体选项变化
+   + `default` (默认选项) 的行为变为采用 `xeCJK` 的默认配置. 亦即，全系为 fandol 字体, 用楷体作为衬线意大利体, 无衬线字体没有意大利体. 也就是说, 现在 `default` 和 `diy` 行为一致.
+     + 所以, 如果什么选项都不传, 用户可以自行用 `\setCJK*font` 配置.
+   + 原 `default` 选项变为 `fandol`, 亦即作者配置的版本, 用仿宋作为衬线意大利体.
+   + 考虑到初次使用的用户体验, `template.tex` 的示例字体选项不再是 `notofandol`, 而是 `default`.
+   + 文档有相应修改.
+
 ## 2022-08-27, [v2.1.2]
 
 ### Changed
 
 1. 一些格式化.
-2. 不再默认导入 `physics`, 而是改为可选项; `\qty` 恢复为 `siunitx` 的命令, `physics` 的命名为 `\qtyp`.
+2. 不再默认导入 `physics`, 而是改为可选项; `\qty` 恢复为 `siunitx` 的命令, `physics` 的命名为 `\qtyp`. (Thanks @AlphaZTX )
 
 ### Added
 

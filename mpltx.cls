@@ -63,7 +63,8 @@
 }
 % 处理字体配置
 \IfStrEqCase{\mpltx@font}{%
-  {default}{%
+  {default}{}%
+  {fandol}{%
     \mpltx@fonttest@fandol%
     \setCJKmainfont[BoldFont={FandolSong Bold},ItalicFont={FandolFang}\mpltx@mapping]{FandolSong}%
     \setCJKsansfont[BoldFont={FandolHei Bold},ItalicFont={FandolKai}\mpltx@mapping]{FandolHei}%
@@ -224,8 +225,7 @@
 
 % ----- Compatibility -----
 \AtBeginDocument{
-  % \IfPackageLoadedTF{caption}{%
-  \@ifpackageloaded{caption}{%
+  \IfPackageLoadedTF{caption}{%
     \ClassError{mpltx}{package `caption' is incompatible}{do not use `caption'}
   }{}
 }
