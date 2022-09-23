@@ -12,6 +12,10 @@
    + 考虑到初次使用的用户体验, `template.tex` 的示例字体选项不再是 `notofandol`, 而是 `default`.
    + 文档有相应修改.
 
+### Added
+
+1. 一个提示阅读 [`README.md`](README.md) 的空文件.
+
 ## 2022-08-27, [v2.1.2]
 
 ### Changed
