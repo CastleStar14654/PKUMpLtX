@@ -225,7 +225,8 @@
 
 % ----- Compatibility -----
 \AtBeginDocument{
-  \IfPackageLoadedTF{caption}{%
+  % \IfPackageLoadedTF{caption}{%
+  \@ifpackageloaded{caption}{%
     \ClassError{mpltx}{package `caption' is incompatible}{do not use `caption'}
   }{}
 }
