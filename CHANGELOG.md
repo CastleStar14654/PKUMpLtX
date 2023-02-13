@@ -1,5 +1,12 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+1. 添加了对 `physics2` 宏包的广告 (by @AlphaZTX ).
+   + 如果试图导入 `physics` 宏包，会警告并推荐 `physics2`. 
+
 ## 2022-09-24, [v2.1.3]
 
 ### Changed

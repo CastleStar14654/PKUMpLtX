@@ -229,4 +229,10 @@
   \@ifpackageloaded{caption}{%
     \ClassError{mpltx}{package `caption' is incompatible}{do not use `caption'}
   }{}
+  \@ifpackageloaded{physics}{%
+    \ClassWarning{mpltx}{%
+        package `physics' might be broken in the future,\MessageBreak
+        try `physics2' by Tingxuan Zhang!
+      }
+  }{}
 }

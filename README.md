@@ -170,6 +170,8 @@ xelatex template
 
 ### `physics` 宏包导入选项
 
+**[`physics`] 宏包使用了一些可能在未来被弃用的 $\mathrm{\LaTeX{}}$ 功能，请考虑使用 Tingxuan Zhang 编写的 [`physics2`]。**
+
 [`physics`] 提供了众多方便的物理符号与公式输入, 如导数符号命令 `\dv{f}{x}`, 自动调整大小的括号 `\qtyp()` 等.
 **但本宏包已十年没有维护, 故默认没有导入**, 如需要请使用 `physics` 文档类选项, 而非自行导入!
 此宏包定义的 "自动调整括号大小" 命令 `\qty` 与 `siunitx` 的 "物理量" 命令重名.
@@ -223,6 +225,7 @@ xelatex template
 [`fandol`]: https://www.ctan.org/pkg/fandol
 [`notocjksc`]: https://www.ctan.org/pkg/notocjksc
 [`physics`]: https://www.ctan.org/pkg/physics
+[`physics2`]: https://www.ctan.org/pkg/physics2
 [`siunitx`]: https://www.ctan.org/pkg/siunitx
 [`caption`]: https://www.ctan.org/pkg/caption
 [`subfig`]: https://www.ctan.org/pkg/subfig
