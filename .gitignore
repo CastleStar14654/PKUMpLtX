@@ -8,3 +8,6 @@
 *.zip
 *.pdf
 !fig/**
+*.fls
+*.fdb_latexmk
+*.xdv

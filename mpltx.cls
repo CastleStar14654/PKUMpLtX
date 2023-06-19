@@ -23,7 +23,10 @@
 
 % 基于 APS 的文档类 revtex4-2; 参数含义:
 % APS 系列期刊 Phys. Rev. E 格式预印本, 显示关键词, A4, 载入 ams 系列
-\LoadClass[aps,pre,preprint,showkeys,a4paper,amsmath,amssymb]{revtex4-2}
+\let\old@label\label
+\LoadClass[aps,pre,preprint,showkeys,a4paper,amssymb]{revtex4-2}
+\let\label\old@label
+\RequirePackage{amsmath}
 % 选项处理
 \RequirePackage{kvoptions}
 % [外部宏包] 字符串处理
