@@ -4,7 +4,11 @@
 
 ### Fixed
 
-1. 修复了 2023-06-17 的系列宏包更新 (包括 `hyperref`, `revtex` 以及 `ltxbase`) 带来的 `\autoref` 无法正常工作的问题
+1. 修复了 2023-06-17 的系列宏包更新 (包括 `hyperref`, `revtex` 以及 `ltxbase`) 带来的 `\autoref` 无法正常工作的问题.
+
+### Added
+
+1. 添加了对 `siunitx` 宏包中表格数值对齐功能的介绍.
 
 ## 2023-02-13, [v2.1.4]
 
