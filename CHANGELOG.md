@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+1. 添加了对需使用 `xelatex` 的强调. 
+
 ## 2023-08-29, [v2.1.5]
 
 ### Fixed

@@ -15,6 +15,8 @@ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 (虽然使用 $\mathrm{\LaTeX{}}$ 会带来另外一些细节问题)
 本模板不保证可靠性.
 
+**重要提示**: 请使用 `xelatex` 编译.
+
 - [下载](#下载)
   - [\[可选\] 安装](#可选-安装)
 - [文件内容](#文件内容)
