@@ -1,12 +1,14 @@
 # Changelog
 
-## [Unreleased]
+## 2025-03-15, [v2.1.6]
+
+### Fixed
+1. 修复了 `font=default` 选项下 `quanjiao` 选项无效的问题. (#2)
 
 ### Added
 
 1. 添加了对需使用 `xelatex` 的强调. 
 2. 添加了数学模式中正体圆周率符号的支持. (#1)
-3. 修复了 `font=default` 选项下 `quanjiao` 选项无效的问题. (#2)
 
 ## 2023-08-29, [v2.1.5]
 
@@ -151,7 +153,8 @@
 
 `*.cls` 初版本.
 
-[Unreleased]: https://github.com/CastleStar14654/PKUMpLtX/compare/v2.1.5...HEAD
+[Unreleased]: https://github.com/CastleStar14654/PKUMpLtX/compare/v2.1.6...HEAD
+[v2.1.6]:     https://github.com/CastleStar14654/PKUMpLtX/compare/v2.1.5...v2.1.6
 [v2.1.5]:     https://github.com/CastleStar14654/PKUMpLtX/compare/v2.1.4...v2.1.5
 [v2.1.4]:     https://github.com/CastleStar14654/PKUMpLtX/compare/v2.1.3...v2.1.4
 [v2.1.3]:     https://github.com/CastleStar14654/PKUMpLtX/compare/v2.1.2...v2.1.3

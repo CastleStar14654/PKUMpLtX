@@ -5,7 +5,7 @@
 
 % ========== Identification ==========
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{mpltx}[2023/08/29 v2.1.5 XeLaTeX class for MP Lab in PKU]
+\ProvidesClass{mpltx}[2025/03/15 v2.1.6 XeLaTeX class for MP Lab in PKU]
 
 % ========== Preliminary declarations ==========
 % copy from \GetFileInfo from LaTeX `doc` program
