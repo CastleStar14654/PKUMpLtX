@@ -165,6 +165,10 @@
 \newcommand{\jj}{\mathrm{j}}
 \newcommand{\ii}{\mathrm{i}}
 \newcommand{\ee}{\mathrm{e}}
+% 英文字体与正体 \pi 定义
+\RequirePackage{fontsetup}
+\RequirePackage{alphabeta}
+\newcommand{\uppi}{\text{\pi}}
 
 % ----- Figure -----
 % 插入图片
