@@ -47,9 +47,8 @@
 
 
 % 全角句点映射
-\def\mpltx@mapping{}
 \ifmpltx@quanjiao%
-  \def\mpltx@mapping{,Mapping={fullwidth-stop}}%
+  \defaultCJKfontfeatures{Mapping={fullwidth-stop}}%
 \fi
 % 提供字体配置
 \def\mpltx@fonttest@fandol{% 检测 fandol 宏包有没有安装
@@ -69,33 +68,33 @@
   {default}{}%
   {fandol}{%
     \mpltx@fonttest@fandol%
-    \setCJKmainfont[BoldFont={FandolSong Bold},ItalicFont={FandolFang}\mpltx@mapping]{FandolSong}%
-    \setCJKsansfont[BoldFont={FandolHei Bold},ItalicFont={FandolKai}\mpltx@mapping]{FandolHei}%
-    \setCJKmonofont[AutoFakeBold=true,ItalicFont={FandolKai}\mpltx@mapping]{FandolFang}%
+    \setCJKmainfont[BoldFont={FandolSong Bold},ItalicFont={FandolFang}]{FandolSong}%
+    \setCJKsansfont[BoldFont={FandolHei Bold},ItalicFont={FandolKai}]{FandolHei}%
+    \setCJKmonofont[AutoFakeBold=true,ItalicFont={FandolKai}]{FandolFang}%
   }{noto}{%
     \mpltx@fonttest@noto%
     \ifwindows{
-      \setCJKmainfont[BoldFont={Noto Serif CJK SC Bold},ItalicFont={FangSong}\mpltx@mapping]{Noto Serif CJK SC}%
-      \setCJKsansfont[BoldFont={Noto Sans CJK SC Bold},ItalicFont={KaiTi}\mpltx@mapping]{Noto Sans CJK SC}%
-      \setCJKmonofont[AutoFakeBold=true,ItalicFont={KaiTi}\mpltx@mapping]{FangSong}}%
+      \setCJKmainfont[BoldFont={Noto Serif CJK SC Bold},ItalicFont={FangSong}]{Noto Serif CJK SC}%
+      \setCJKsansfont[BoldFont={Noto Sans CJK SC Bold},ItalicFont={KaiTi}]{Noto Sans CJK SC}%
+      \setCJKmonofont[AutoFakeBold=true,ItalicFont={KaiTi}]{FangSong}}%
     \else{
-      \setCJKmainfont[BoldFont={Noto Serif CJK SC Bold},ItalicFont={STFangsong}\mpltx@mapping]{Noto Serif CJK SC}%
-      \setCJKsansfont[BoldFont={Noto Sans CJK SC Bold},ItalicFont={KaiTi SC},BoldItalicFont={KaiTi SC Bold},\mpltx@mapping]{Noto Sans CJK SC}%
-      \setCJKmonofont[AutoFakeBold=true,ItalicFont={KaiTi SC},BoldItalicFont={KaiTi SC Bold}\mpltx@mapping]{STFangsong}}%
+      \setCJKmainfont[BoldFont={Noto Serif CJK SC Bold},ItalicFont={STFangsong}]{Noto Serif CJK SC}%
+      \setCJKsansfont[BoldFont={Noto Sans CJK SC Bold},ItalicFont={KaiTi SC},BoldItalicFont={KaiTi SC Bold},]{Noto Sans CJK SC}%
+      \setCJKmonofont[AutoFakeBold=true,ItalicFont={KaiTi SC},BoldItalicFont={KaiTi SC Bold}]{STFangsong}}%
     \fi
   }{notofandol}{%
     \mpltx@fonttest@noto\mpltx@fonttest@fandol%
-    \setCJKmainfont[BoldFont={Noto Serif CJK SC Bold},ItalicFont={FandolFang}\mpltx@mapping]{Noto Serif CJK SC}%
-    \setCJKsansfont[BoldFont={Noto Sans CJK SC Bold},ItalicFont={FandolKai}\mpltx@mapping]{Noto Sans CJK SC}%
-    \setCJKmonofont[AutoFakeBold=true,ItalicFont={FandolKai}\mpltx@mapping]{FandolFang}
+    \setCJKmainfont[BoldFont={Noto Serif CJK SC Bold},ItalicFont={FandolFang}]{Noto Serif CJK SC}%
+    \setCJKsansfont[BoldFont={Noto Sans CJK SC Bold},ItalicFont={FandolKai}]{Noto Sans CJK SC}%
+    \setCJKmonofont[AutoFakeBold=true,ItalicFont={FandolKai}]{FandolFang}
   }{windows}{%
-    \setCJKmainfont[BoldFont={STZhongsong},ItalicFont={STFangsong}\mpltx@mapping]{STSong}%
-    \setCJKsansfont[BoldFont={DengXian Bold},ItalicFont={STKaiti}\mpltx@mapping]{DengXian}%
-    \setCJKmonofont[AutoFakeBold=true,ItalicFont={STKaiti}\mpltx@mapping]{STFangsong}
+    \setCJKmainfont[BoldFont={STZhongsong},ItalicFont={STFangsong}]{STSong}%
+    \setCJKsansfont[BoldFont={DengXian Bold},ItalicFont={STKaiti}]{DengXian}%
+    \setCJKmonofont[AutoFakeBold=true,ItalicFont={STKaiti}]{STFangsong}
   }{macos}{%
-    \setCJKmainfont[BoldFont={Songti SC Bold},ItalicFont={STFangsong}\mpltx@mapping]{Songti SC}%
-    \setCJKsansfont[BoldFont={PingFang SC Semibold},ItalicFont={Kaiti SC},BoldItalicFont={KaiTi SC Bold}\mpltx@mapping]{PingFang SC}%
-    \setCJKmonofont[AutoFakeBold=true,ItalicFont={KaiTi SC},BoldItalicFont={KaiTi SC Bold}\mpltx@mapping]{STFangsong}
+    \setCJKmainfont[BoldFont={Songti SC Bold},ItalicFont={STFangsong}]{Songti SC}%
+    \setCJKsansfont[BoldFont={PingFang SC Semibold},ItalicFont={Kaiti SC},BoldItalicFont={KaiTi SC Bold}]{PingFang SC}%
+    \setCJKmonofont[AutoFakeBold=true,ItalicFont={KaiTi SC},BoldItalicFont={KaiTi SC Bold}]{STFangsong}
   }{diy}{}
 }[\ClassError{mpltx}{unkown 'font' value}{check for 'font' option}]
 
